@@ -9,7 +9,7 @@ var GamePage=React.createClass({
 		return (
 			<div>
 				<Grid />
-				<ScoreBoard playerName={this.props.params.playerName} buttonClass="info" value="GiveUp?"/>
+				<ScoreBoard playerName={this.props.params.playerName} classname="info" value="GiveUp?"/>
 			</div>
 			)
 	

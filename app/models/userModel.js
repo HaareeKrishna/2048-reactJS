@@ -11,7 +11,7 @@ var app={
 		db(function(db){
 			app.getUser(userName,function(result){
 				if(result.length==0)
-					db.collection("players").insert({userName:userName,scores:score},{w:1},function(err,data){
+					db.collection("players").insert({userName:userName,scores:score,currScore:0},{w:1},function(err,data){
 						
 					})
 
@@ -29,7 +29,7 @@ var app={
 	},
 	update:function(userName,score){
 		db(function(db){
-			db.collection("players").update({userName:userName},{$max:{scores:parseInt(score)}},function(err,data){
+			db.collection("players").update({userName:userName},{$max:{scores:parseInt(score)}},{currScore:parseInt(score)},function(err,data){
 			});
 		});
 	}

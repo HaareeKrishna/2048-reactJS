@@ -33990,629 +33990,6 @@ module.exports = warning;
 module.exports = require('./lib/React');
 
 },{"./lib/React":84}],217:[function(require,module,exports){
-
-
-var GameDispatcher = require("../dispatcher/gameDispatcher.jsx");
-
-var app = {
-	modifyGrid: function (keyCode) {
-		GameDispatcher.dispatch({ keyCode: keyCode });
-	}
-};
-module.exports = app;
-
-},{"../dispatcher/gameDispatcher.jsx":228}],218:[function(require,module,exports){
-
-var GamePage = require("./components/gamePage.react.jsx");
-var Login = require("./components/login.react.jsx");
-var DonePage = require("./components/donePage.react.jsx");
-var ReactRouter = require('react-router');
-var Router = ReactRouter.Router;
-var Route = ReactRouter.Route;
-var hashHistory = ReactRouter.hashHistory;
-var React = require('react');
-
-//for react dev tools
-window.React = React;
-var ReactDOM = require('react-dom');
-
-//declaring routes
-const routes = React.createElement(
-		Router,
-		{ history: hashHistory },
-		React.createElement(Route, { path: "/game/:playerName", component: GamePage }),
-		React.createElement(Route, { path: "/", component: Login }),
-		React.createElement(Route, { path: "/game/:playerName/done", component: DonePage })
-);
-ReactDOM.render(React.createElement(
-		Router,
-		null,
-		routes
-), document.getElementById('gameContainer'));
-
-},{"./components/donePage.react.jsx":221,"./components/gamePage.react.jsx":222,"./components/login.react.jsx":225,"react":216,"react-dom":235,"react-router":31}],219:[function(require,module,exports){
-var React = require("react");
-//Button component which share similar style but different actions which are passed through parameters
-var Button = React.createClass({
-	displayName: "Button",
-
-
-	render: function () {
-		return React.createElement(
-			"div",
-			{ className: "giveUp" },
-			React.createElement(
-				"button",
-				null,
-				React.createElement(
-					"a",
-					{ href: this.props.redir },
-					this.props.value
-				)
-			)
-		);
-	}
-
-});
-module.exports = Button;
-
-},{"react":216}],220:[function(require,module,exports){
-
-var React = require("react");
-var GridStore = require("../store/gridStore.jsx");
-var gameConstants = require("../constants/gameConstants.jsx");
-//current score board component
-var CurrentScore = React.createClass({
-  displayName: "CurrentScore",
-
-  getInitialState: function () {
-    return {
-      //initializing current score to 0
-      currScore: 0
-
-    };
-  },
-  componentDidMount: function () {
-    GridStore.addChangeListener(this._onChange);
-  },
-  render: function () {
-    return(
-      //current score div
-
-      React.createElement(
-        "span",
-        null,
-        React.createElement(
-          "h4",
-          { className: "score" },
-          "SCORE",
-          React.createElement("br", null)
-        ),
-        React.createElement(
-          "h1",
-          { id: "currScore", className: "num" },
-          this.props.currentScore ? this.props.currentScore : this.state.currScore
-        )
-      )
-    );
-  },
-  _onChange: function () {
-    this.setState(getCurrentScore());
-    this.props.onChange(getCurrentScore());
-  }
-
-});
-//gets score from store
-var getCurrentScore = function () {
-  return {
-    currScore: GridStore.getCurrentScore()
-  };
-};
-module.exports = CurrentScore;
-
-},{"../constants/gameConstants.jsx":227,"../store/gridStore.jsx":229,"react":216}],221:[function(require,module,exports){
-var React = require("react");
-var ScoreBoard = require("./scoreBoard.react.jsx");
-var ReactDOM = require("react-dom");
-//Final page after gameover
-var DonePage = React.createClass({
-	displayName: "DonePage",
-
-	render: function () {
-		return React.createElement(ScoreBoard, { playerName: this.props.params.playerName, value: "Try again?", buttonclass: "scores", redir: "/#/" });
-	}
-});
-module.exports = DonePage;
-
-},{"./scoreBoard.react.jsx":226,"react":216,"react-dom":235}],222:[function(require,module,exports){
-var React = require("react");
-var Grid = require("./grid.react.jsx");
-var ScoreBoard = require("./scoreBoard.react.jsx");
-
-var ReactDOM = require("react-dom");
-//game page
-var GamePage = React.createClass({
-	displayName: "GamePage",
-
-	render: function () {
-		return React.createElement(
-			"div",
-			null,
-			React.createElement(Grid, null),
-			React.createElement(ScoreBoard, { playerName: this.props.params.playerName, buttonClass: "info", value: "GiveUp?" })
-		);
-	}
-});
-
-module.exports = GamePage;
-
-},{"./grid.react.jsx":223,"./scoreBoard.react.jsx":226,"react":216,"react-dom":235}],223:[function(require,module,exports){
-
-var React = require("react");
-var GridStore = require("../store/gridStore.jsx");
-var GridActionCreator = require('../actions/gridActionCreators.jsx');
-//binding function to keyDown event
-document.onkeydown = checkKey;
-
-var Grid = React.createClass({
-	displayName: "Grid",
-
-
-	getInitialState: function () {
-		return {
-			gridData: GridStore.createGrid()
-		};
-	},
-
-	componentDidMount: function () {
-		GridStore.addChangeListener(this._onChange);
-	},
-
-	render: function () {
-		var gridData = this.state.gridData._data;
-
-		return(
-			//generating grid from matrix
-			React.createElement(
-				"div",
-				{ className: "gridBody" },
-				React.createElement(
-					"table",
-					null,
-					gridData.map(function (val) {
-						var temp = val.map(function (value, index) {
-							if (value == 0) value = "";
-							var name = 'class_' + value;
-
-							return React.createElement(
-								"td",
-								{ className: name },
-								React.createElement(
-									"span",
-									null,
-									value
-								)
-							);
-						});
-						return React.createElement(
-							"tr",
-							null,
-							temp
-						);
-					})
-				)
-			)
-		);
-	},
-
-	_onChange: function () {
-		this.setState(getGrid());
-	}
-});
-function getGrid() {
-
-	return {
-
-		gridData: GridStore.getGrid()
-
-	};
-}
-
-function checkKey(e) {
-
-	GridActionCreator.modifyGrid(event.keyCode);
-}
-
-module.exports = Grid;
-
-},{"../actions/gridActionCreators.jsx":217,"../store/gridStore.jsx":229,"react":216}],224:[function(require,module,exports){
-var React = require("react");
-//current score board component
-var HighScore = React.createClass({
-  displayName: "HighScore",
-
-
-  getInitialState: function () {
-    return {
-      //initializing high score to 0
-      highScore: 0
-    };
-  },
-  render: function () {
-    return(
-      //high score div)
-      React.createElement(
-        "span",
-        null,
-        React.createElement(
-          "h4",
-          { className: "score" },
-          "HIGH SCORE",
-          React.createElement("br", null)
-        ),
-        React.createElement(
-          "h1",
-          { className: "num" },
-          this.props.score
-        )
-      )
-    );
-  }
-});
-module.exports = HighScore;
-
-},{"react":216}],225:[function(require,module,exports){
-var React = require("react");
-
-//login page to collect name from player
-var Login = React.createClass({
-	displayName: "Login",
-
-	render: function () {
-		return React.createElement(
-			"div",
-			{ className: "playerInfo" },
-			React.createElement(
-				"h1",
-				null,
-				"2048"
-			),
-			React.createElement(
-				"form",
-				{ action: "/game", method: "post", name: "playerInfo" },
-				React.createElement("input", { type: "text", name: "playerName", className: "playerName", placeholder: "Enter your name" }),
-				React.createElement("input", { type: "submit", className: "playerButton", value: "Go!" })
-			)
-		);
-	}
-});
-
-module.exports = Login;
-
-},{"react":216}],226:[function(require,module,exports){
-var React = require("react");
-var HighScore = require("./highScore.react.jsx");
-var CurrScore = require("./currScore.react.jsx");
-var Button = require("./button.react.jsx");
-var $ = require('jquery');
-//scoreboard page
-
-var ScoreBoard = React.createClass({
-  displayName: "ScoreBoard",
-
-  getInitialState: function () {
-    return {
-      playerName: '',
-      highScore: 0,
-      currScores: 0
-    };
-  },
-  handleScoreChange: function (score) {
-    //handle score changed in currScore component
-    this.setState({
-      currScore: score.currScore,
-      redir: "/game/" + this.state.playername + "/score?score=" + score.currScore
-    });
-  },
-  componentWillMount: function () {
-    var source = "/game/" + this.props.playerName;
-    //making ajax call to get info of player
-    this.serverRequest = $.get(source, function (result) {
-      this.setState({
-        currScores: result.currentScore ? result.currentScore : 0,
-        playername: result.userName,
-        highScore: result.scores
-      });
-    }.bind(this));
-  },
-
-  componentWillUnmount: function () {
-    //before unmounting aborting the request
-    this.serverRequest.abort();
-  },
-
-  render: function () {
-
-    return React.createElement(
-      "div",
-      { className: this.props.buttonClass },
-      React.createElement(
-        "h2",
-        null,
-        this.state.playername
-      ),
-      React.createElement(CurrScore, { currentScore: this.state.currScores, onChange: this.handleScoreChange }),
-      React.createElement(HighScore, { score: this.state.highScore }),
-      React.createElement(Button, { redir: this.props.redir ? this.props.redir : this.state.redir, value: this.props.value })
-    );
-  }
-});
-
-module.exports = ScoreBoard;
-
-},{"./button.react.jsx":219,"./currScore.react.jsx":220,"./highScore.react.jsx":224,"jquery":3,"react":216}],227:[function(require,module,exports){
-//storing defaults and variables in seperate constants.js file
-
-var gridData = {
-	grid: [],
-	numbers: ['2,4'],
-	currScore: 0,
-	dim: 4
-};
-module.exports = gridData;
-
-},{}],228:[function(require,module,exports){
-var Dispatcher = require('flux').Dispatcher;
-
-module.exports = new Dispatcher();
-
-},{"flux":232}],229:[function(require,module,exports){
-var EventEmitter = require('events').EventEmitter;
-var GameDispatcher = require("../dispatcher/gameDispatcher.jsx");
-var gameConstants = require("../constants/gameConstants.jsx");
-var gridclass = require("../utils/grid.js");
-var CHANGE_EVENT = 'change';
-var assign = require('object-assign');
-
-//constructing grid from GridClass class
-var Grid = new gridclass(gameConstants);
-//change grid according to action dispatched
-var GridStore = assign({}, EventEmitter.prototype, {
-
-		emitChange: function () {
-				this.emit(CHANGE_EVENT);
-		},
-
-		addChangeListener: function (callback) {
-				this.on(CHANGE_EVENT, callback);
-		},
-
-		removeChangeListener: function (callback) {
-				this.removeListener(CHANGE_EVENT, callback);
-		},
-
-		createGrid: function () {
-				//creating grid for first time with dimensions as parameters
-				Grid.createGrid();
-				return gameConstants.grid;
-		},
-
-		getGrid: function () {
-				return gameConstants.grid;
-		},
-
-		getCurrentScore: function () {
-				return gameConstants.currScore;
-		}
-});
-
-//dispacting actions and emmiting CHANGE event, whenever state of grid is changed
-GridStore.dispatchToken = GameDispatcher.register(function (action) {
-
-		switch (action.keyCode) {
-				case 37:
-						Grid.left();
-						GridStore.emitChange();
-						break;
-				case 38:
-						Grid.up();
-						GridStore.emitChange();
-						break;
-				case 39:
-						Grid.right();
-						GridStore.emitChange();
-						break;
-				case 40:
-						Grid.down();
-						GridStore.emitChange();
-						break;
-		}
-});
-
-module.exports = GridStore;
-
-},{"../constants/gameConstants.jsx":227,"../dispatcher/gameDispatcher.jsx":228,"../utils/grid.js":230,"events":1,"object-assign":234}],230:[function(require,module,exports){
-var GridClass = function (gameConstants) {
-	var dim = gameConstants.dim;
-	var self = this;
-	var grid = gameConstants.grid;
-
-	//grid functions
-	this.createGrid = function () {
-		//dim is dimensions of matrix to create
-		grid = math.zeros(dim, dim);
-		grid._data[0] = self.getRandomInit(grid._data[0]);
-		gameConstants.grid = grid;
-	};
-	//function when down key is pressed
-	this.down = function () {
-		for (var i = 0; i <= dim - 1; i++) {
-
-			//slicing line to be updated
-			var line = [].concat.apply([], math.subset(grid, math.index(math.range(0, dim), i))._data);
-			var temp = self.updateLineReverse(line, 0);
-			var stack = [];
-			temp.forEach(function (val, index) {
-				stack.push([val]);
-			});
-			grid.subset(math.index(math.range(0, dim), i), stack);
-		}
-		//slicing last row of the grid to insert extra cell
-		var Lastline = grid._data;
-		Lastline[0] = self.getRandomInit(Lastline[0]);
-	};
-	//function when up key is pressed
-	this.up = function () {
-		for (var i = 0; i <= dim - 1; i++) {
-			//slicing line to be updated
-			var line = [].concat.apply([], math.subset(grid, math.index(math.range(0, dim), i))._data);
-			var temp = self.updateLine(line, 1);
-			var stack = [];
-			temp.forEach(function (val, index) {
-				stack.push([val]);
-			});
-			grid.subset(math.index(math.range(0, dim), i), stack);
-		}
-		//slicing first row of the grid to insert extra cell
-		var Lastline = grid._data;
-		Lastline[Lastline.length - 1] = self.getRandomInit(Lastline[Lastline.length - 1]);
-	};
-	//function when right key is pressed
-	this.right = function () {
-		var stack = [];
-		for (var i = 0; i < grid._data.length; i++) {
-			stack.push(self.updateLine(grid._data[i], 0));
-		}
-		//convert updated array back to matrix
-		grid = math.matrix(stack);
-		//slicing first column of the grid to insert extra cell
-		var Lastline = [].concat.apply([], math.subset(grid, math.index(math.range(0, dim), 0))._data);
-		grid.subset(math.index(math.range(0, dim), 0), self.getRandomInit(Lastline));
-		gameConstants.grid = grid;
-	};
-
-	//function when left key is pressed
-	this.left = function () {
-		var stack = [];
-		for (var i = 0; i < grid._data.length; i++) {
-			stack.push(self.updateLineReverse(grid._data[i], 1));
-		}
-		//convert updated array back to matrix
-		grid = math.matrix(stack);
-		//slicing last column of the grid to insert extra cell
-		var Lastline = [].concat.apply([], math.subset(grid, math.index(math.range(0, dim), grid._data.length - 1))._data);
-		grid.subset(math.index(math.range(0, 4), grid._data.length - 1), self.getRandomInit(Lastline));
-		gameConstants.grid = grid;
-	};
-
-	this.updateLine = function (line, reverse) {
-		//remove zeros from line
-		line = self.sliceZeros(line, reverse);
-		var newLine;
-		//update line
-		line.every(function (val, index) {
-			if (index != line.length - 1) {
-				if (val != 0 && line[index] == line[index + 1]) {
-					var end = index + 2 > line.length ? index : index + 2;
-					line[index] += line[index + 1];
-					gameConstants.currScore += line[index];
-					var start = line.slice(0, index + 1);
-					var sliced = line.slice(end);
-					if (reverse) {
-						var r = sliced.concat([0]);
-						newLine = start.concat(r);
-					} else {
-						var temp = [0].concat(start);
-						newLine = temp.concat(sliced);
-					}
-					return false;
-				} else {
-
-					return true;
-				}
-			} else newLine = line;
-		});
-		return newLine;
-	};
-
-	this.updateLineReverse = function (line, reverse) {
-		//remove zeros from line
-		line = self.sliceZeros(line, reverse);
-		var flag = true;
-		newLine = line;
-		//updating line and returning
-		for (var index = line.length - 1; index > 0 && flag == true; index--) {
-			if (line[index] != 0 && line[index] == line[index - 1]) {
-				var end = index;
-				line[index] += line[index - 1];
-				gameConstants.currScore += line[index];
-				var start = line.slice(0, index - 1);
-				var sliced = line.slice(end);
-				if (reverse) {
-					var temp = sliced.concat([0]);
-					newLine = start.concat(temp);
-				} else {
-					var temp = [0].concat(start);
-					newLine = temp.concat(sliced);
-				}
-
-				flag = false;
-			} else {
-
-				flag = true;
-			}
-		}
-		return newLine;
-	};
-	//function to check the status of game
-	this.checkGameStatus = function () {
-		var flag = true;
-		grid._data.every(function (val, index) {
-			if (val.indexOf(2048) > -1) {
-				window.location = "/game/" + gameConstants.playerName + "/score?score=" + gameConstants.currScore;
-			}
-		});
-	};
-	//function to remove zeros from given line as parameter
-	this.sliceZeros = function (line, reverse) {
-		var temp = [];
-		for (var i = 0; i < line.length;) {
-			if (line[i] == 0) {
-				line.splice(i, 1);
-				temp.push(0);
-			} else i++;
-		};
-		if (reverse) line = line.concat(temp);else line = temp.concat(line);
-		return line;
-	};
-	//function to get random array
-	this.getRamdomArray = function (len) {
-		var arr = [];
-		for (var i = 0; i < len; i) {
-			var rand = Math.floor(Math.random() * len);
-			if (arr.indexOf(rand) == -1) {
-				arr[i] = rand;
-				i++;
-			}
-		}
-		return arr;
-	};
-	//function to get updated line by adding new cell after grid
-	this.getRandomInit = function (line) {
-		var num = [2, 4];
-		var temp = self.getRamdomArray(4);
-		temp.every(function (val, index) {
-			if (line[val] == 0) {
-				line[val] = num[Math.floor(Math.random() * num.length)];
-				return false;
-			} else return true;
-		});
-		return line;
-	};
-};
-module.exports = GridClass;
-
-},{}],231:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34664,7 +34041,7 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":2}],232:[function(require,module,exports){
+},{"_process":2}],218:[function(require,module,exports){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -34676,7 +34053,7 @@ module.exports = invariant;
 
 module.exports.Dispatcher = require('./lib/Dispatcher');
 
-},{"./lib/Dispatcher":233}],233:[function(require,module,exports){
+},{"./lib/Dispatcher":219}],219:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
@@ -34910,7 +34287,7 @@ var Dispatcher = (function () {
 
 module.exports = Dispatcher;
 }).call(this,require('_process'))
-},{"_process":2,"fbjs/lib/invariant":231}],234:[function(require,module,exports){
+},{"_process":2,"fbjs/lib/invariant":217}],220:[function(require,module,exports){
 /* eslint-disable no-unused-vars */
 'use strict';
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -34951,9 +34328,634 @@ module.exports = Object.assign || function (target, source) {
 	return to;
 };
 
-},{}],235:[function(require,module,exports){
+},{}],221:[function(require,module,exports){
 'use strict';
 
 module.exports = require('react/lib/ReactDOM');
 
-},{"react/lib/ReactDOM":95}]},{},[218]);
+},{"react/lib/ReactDOM":95}],222:[function(require,module,exports){
+
+
+var GameDispatcher = require("../dispatcher/gameDispatcher.jsx");
+
+var app = {
+	modifyGrid: function (keyCode) {
+		GameDispatcher.dispatch({ keyCode: keyCode });
+	}
+};
+module.exports = app;
+
+},{"../dispatcher/gameDispatcher.jsx":233}],223:[function(require,module,exports){
+
+var GamePage = require("./components/gamePage.react.jsx");
+var Login = require("./components/login.react.jsx");
+var DonePage = require("./components/donePage.react.jsx");
+var ReactRouter = require('react-router');
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+
+var React = require('react');
+
+//for react dev tools
+window.React = React;
+var ReactDOM = require('react-dom');
+
+//declaring routes
+const routes = React.createElement(
+		Router,
+		null,
+		React.createElement(Route, { path: "/game/:playerName", component: GamePage }),
+		React.createElement(Route, { path: "/game", component: Login }),
+		React.createElement(Route, { path: "/game/:playerName/done", component: DonePage })
+);
+ReactDOM.render(React.createElement(
+		Router,
+		null,
+		routes
+), document.getElementById('gameContainer'));
+
+},{"./components/donePage.react.jsx":226,"./components/gamePage.react.jsx":227,"./components/login.react.jsx":230,"react":216,"react-dom":221,"react-router":31}],224:[function(require,module,exports){
+var React = require("react");
+//Button component which share similar style but different actions which are passed through parameters
+var Button = React.createClass({
+	displayName: "Button",
+
+
+	render: function () {
+		return React.createElement(
+			"div",
+			{ className: "giveUp" },
+			React.createElement(
+				"button",
+				null,
+				React.createElement(
+					"a",
+					{ href: this.props.redir },
+					this.props.value
+				)
+			)
+		);
+	}
+
+});
+module.exports = Button;
+
+},{"react":216}],225:[function(require,module,exports){
+
+var React = require("react");
+var GridStore = require("../store/gridStore.jsx");
+//current score board component
+var CurrentScore = React.createClass({
+	displayName: "CurrentScore",
+
+	getInitialState: function () {
+		return {
+			//initializing current score to 0
+			currScore: 0
+
+		};
+	},
+	componentDidMount: function () {
+		GridStore.addChangeListener(this._onChange);
+	},
+	render: function () {
+		return(
+			//current score div
+			React.createElement(
+				"div",
+				null,
+				React.createElement(
+					"span",
+					null,
+					React.createElement(
+						"h4",
+						{ className: "score" },
+						"SCORE",
+						React.createElement("br", null)
+					),
+					React.createElement(
+						"h1",
+						{ id: "currScore", className: "num" },
+						this.props.currentScore ? this.props.currentScore : this.state.currScore
+					)
+				)
+			)
+		);
+	},
+	_onChange: function () {
+		this.setState(getCurrentScore());
+		this.props.onChange(getCurrentScore());
+	}
+
+});
+//gets score from store
+var getCurrentScore = function () {
+	return {
+		currScore: GridStore.getCurrentScore()
+	};
+};
+module.exports = CurrentScore;
+
+},{"../store/gridStore.jsx":234,"react":216}],226:[function(require,module,exports){
+var React = require("react");
+var ScoreBoard = require("./scoreBoard.react.jsx");
+var ReactDOM = require("react-dom");
+//Final page after gameover
+var DonePage = React.createClass({
+	displayName: "DonePage",
+
+	render: function () {
+		return React.createElement(ScoreBoard, { playerName: this.props.params.playerName, value: "Try again?", classname: "scores", redir: "/#/game/" });
+	}
+});
+module.exports = DonePage;
+
+},{"./scoreBoard.react.jsx":231,"react":216,"react-dom":221}],227:[function(require,module,exports){
+var React = require("react");
+var Grid = require("./grid.react.jsx");
+var ScoreBoard = require("./scoreBoard.react.jsx");
+
+var ReactDOM = require("react-dom");
+//game page
+var GamePage = React.createClass({
+	displayName: "GamePage",
+
+	render: function () {
+		return React.createElement(
+			"div",
+			null,
+			React.createElement(Grid, null),
+			React.createElement(ScoreBoard, { playerName: this.props.params.playerName, classname: "info", value: "GiveUp?" })
+		);
+	}
+});
+
+module.exports = GamePage;
+
+},{"./grid.react.jsx":228,"./scoreBoard.react.jsx":231,"react":216,"react-dom":221}],228:[function(require,module,exports){
+
+var React = require("react");
+var GridStore = require("../store/gridStore.jsx");
+var GridActionCreator = require('../actions/gridActionCreators.jsx');
+//binding function to keyDown event
+document.onkeydown = checkKey;
+
+var Grid = React.createClass({
+	displayName: "Grid",
+
+
+	getInitialState: function () {
+		return {
+			gridData: GridStore.createGrid()
+		};
+	},
+
+	componentDidMount: function () {
+		GridStore.addChangeListener(this._onChange);
+	},
+
+	render: function () {
+		var gridData = this.state.gridData._data;
+
+		return(
+			//generating grid from matrix
+			React.createElement(
+				"div",
+				{ className: "gridBody" },
+				React.createElement(
+					"table",
+					null,
+					gridData.map(function (val) {
+						var temp = val.map(function (value, index) {
+							if (value == 0) value = "";
+							var name = 'class_' + value;
+
+							return React.createElement(
+								"td",
+								{ className: name },
+								React.createElement(
+									"span",
+									null,
+									value
+								)
+							);
+						});
+						return React.createElement(
+							"tr",
+							null,
+							temp
+						);
+					})
+				)
+			)
+		);
+	},
+
+	_onChange: function () {
+		this.setState(getGrid());
+	}
+});
+function getGrid() {
+
+	return {
+
+		gridData: GridStore.getGrid()
+
+	};
+}
+
+function checkKey(e) {
+
+	GridActionCreator.modifyGrid(event.keyCode);
+}
+
+module.exports = Grid;
+
+},{"../actions/gridActionCreators.jsx":222,"../store/gridStore.jsx":234,"react":216}],229:[function(require,module,exports){
+var React = require("react");
+//current score board component
+var HighScore = React.createClass({
+  displayName: "HighScore",
+
+
+  getInitialState: function () {
+    return {
+      //initializing high score to 0
+      highScore: 0
+    };
+  },
+  render: function () {
+    return(
+      //high score div)
+      React.createElement(
+        "span",
+        null,
+        React.createElement(
+          "h4",
+          { className: "score" },
+          "HIGH SCORE",
+          React.createElement("br", null)
+        ),
+        React.createElement(
+          "h1",
+          { className: "num" },
+          this.props.score
+        )
+      )
+    );
+  }
+});
+module.exports = HighScore;
+
+},{"react":216}],230:[function(require,module,exports){
+var React = require("react");
+
+//login page to collect name from player
+var Login = React.createClass({
+	displayName: "Login",
+
+	render: function () {
+		return React.createElement(
+			"div",
+			{ className: "playerInfo" },
+			React.createElement(
+				"h1",
+				null,
+				"2048"
+			),
+			React.createElement(
+				"form",
+				{ action: "/game", method: "POST", name: "playerInfo" },
+				React.createElement("input", { type: "text", name: "playerName", className: "playerName", placeholder: "Enter your name" }),
+				React.createElement("input", { type: "submit", className: "playerButton", value: "Go!" })
+			)
+		);
+	}
+});
+
+module.exports = Login;
+
+},{"react":216}],231:[function(require,module,exports){
+var React = require("react");
+var HighScore = require("./highScore.react.jsx");
+var CurrScore = require("./currScore.react.jsx");
+var Button = require("./button.react.jsx");
+var $ = require('jquery');
+//scoreboard page
+
+var ScoreBoard = React.createClass({
+  displayName: "ScoreBoard",
+
+  getInitialState: function () {
+    return {
+      playerName: '',
+      highScore: 0,
+      currScores: 0
+    };
+  },
+  handleScoreChange: function (score) {
+    //handle score changed in currScore component
+    this.setState({
+      currScore: score.currScore,
+      redir: "/game/" + this.state.playername + "/score?score=" + score.currScore
+    });
+  },
+  componentWillMount: function () {
+    var source = "/game/" + this.props.playerName;
+    //making ajax call to get info of player
+    this.serverRequest = $.get(source, function (result) {
+      this.setState({
+        currScores: result.currentScore ? result.currentScore : 0,
+        playername: result.userName,
+        highScore: result.scores
+      });
+    }.bind(this));
+  },
+
+  componentWillUnmount: function () {
+    //before unmounting aborting the request
+    this.serverRequest.abort();
+  },
+
+  render: function () {
+    console.log(this.props.classname);
+    return React.createElement(
+      "div",
+      { className: this.props.classname },
+      React.createElement(
+        "h2",
+        null,
+        this.state.playername
+      ),
+      React.createElement(CurrScore, { currentScore: this.state.currScores, onChange: this.handleScoreChange }),
+      React.createElement(HighScore, { score: this.state.highScore }),
+      React.createElement(Button, { redir: this.props.redir ? this.props.redir : this.state.redir, value: this.props.value })
+    );
+  }
+});
+
+module.exports = ScoreBoard;
+
+},{"./button.react.jsx":224,"./currScore.react.jsx":225,"./highScore.react.jsx":229,"jquery":3,"react":216}],232:[function(require,module,exports){
+//storing defaults and variables in seperate constants.js file
+
+var gridData = {
+	grid: [],
+	numbers: ['2,4'],
+	currScore: 0,
+	dim: 4
+};
+module.exports = gridData;
+
+},{}],233:[function(require,module,exports){
+var Dispatcher = require('flux').Dispatcher;
+
+module.exports = new Dispatcher();
+
+},{"flux":218}],234:[function(require,module,exports){
+var EventEmitter = require('events').EventEmitter;
+var GameDispatcher = require("../dispatcher/gameDispatcher.jsx");
+var gameConstants = require("../constants/gameConstants.jsx");
+var gridclass = require("../utils/grid.js");
+var CHANGE_EVENT = 'change';
+var assign = require('object-assign');
+
+//constructing grid from GridClass class
+var Grid = new gridclass(gameConstants);
+//change grid according to action dispatched
+var GridStore = assign({}, EventEmitter.prototype, {
+
+		emitChange: function () {
+				this.emit(CHANGE_EVENT);
+		},
+
+		addChangeListener: function (callback) {
+				this.on(CHANGE_EVENT, callback);
+		},
+
+		removeChangeListener: function (callback) {
+				this.removeListener(CHANGE_EVENT, callback);
+		},
+
+		createGrid: function () {
+				//creating grid for first time with dimensions as parameters
+				Grid.createGrid();
+				return gameConstants.grid;
+		},
+
+		getGrid: function () {
+				return gameConstants.grid;
+		},
+
+		getCurrentScore: function () {
+				return gameConstants.currScore;
+		}
+});
+
+//dispacting actions and emmiting CHANGE event, whenever state of grid is changed
+GridStore.dispatchToken = GameDispatcher.register(function (action) {
+
+		switch (action.keyCode) {
+				case 37:
+						Grid.left();
+						GridStore.emitChange();
+						break;
+				case 38:
+						Grid.up();
+						GridStore.emitChange();
+						break;
+				case 39:
+						Grid.right();
+						GridStore.emitChange();
+						break;
+				case 40:
+						Grid.down();
+						GridStore.emitChange();
+						break;
+		}
+});
+
+module.exports = GridStore;
+
+},{"../constants/gameConstants.jsx":232,"../dispatcher/gameDispatcher.jsx":233,"../utils/grid.js":235,"events":1,"object-assign":220}],235:[function(require,module,exports){
+var GridClass = function (gameConstants) {
+	var dim = gameConstants.dim;
+	var self = this;
+	var grid = gameConstants.grid;
+
+	//grid functions
+	this.createGrid = function () {
+		//dim is dimensions of matrix to create
+		grid = math.zeros(dim, dim);
+		grid._data[0] = self.getRandomInit(grid._data[0]);
+		gameConstants.grid = grid;
+	};
+	//function when down key is pressed
+	this.down = function () {
+		for (var i = 0; i <= dim - 1; i++) {
+
+			//slicing line to be updated
+			var line = [].concat.apply([], math.subset(grid, math.index(math.range(0, dim), i))._data);
+			var temp = self.updateLineReverse(line, 0);
+			var stack = [];
+			temp.forEach(function (val, index) {
+				stack.push([val]);
+			});
+			grid.subset(math.index(math.range(0, dim), i), stack);
+		}
+		//slicing last row of the grid to insert extra cell
+		var Lastline = grid._data;
+		Lastline[0] = self.getRandomInit(Lastline[0]);
+	};
+	//function when up key is pressed
+	this.up = function () {
+		for (var i = 0; i <= dim - 1; i++) {
+			//slicing line to be updated
+			var line = [].concat.apply([], math.subset(grid, math.index(math.range(0, dim), i))._data);
+			var temp = self.updateLine(line, 1);
+			var stack = [];
+			temp.forEach(function (val, index) {
+				stack.push([val]);
+			});
+			grid.subset(math.index(math.range(0, dim), i), stack);
+		}
+		//slicing first row of the grid to insert extra cell
+		var Lastline = grid._data;
+		Lastline[Lastline.length - 1] = self.getRandomInit(Lastline[Lastline.length - 1]);
+	};
+	//function when right key is pressed
+	this.right = function () {
+		var stack = [];
+		for (var i = 0; i < grid._data.length; i++) {
+			stack.push(self.updateLine(grid._data[i], 0));
+		}
+		//convert updated array back to matrix
+		grid = math.matrix(stack);
+		//slicing first column of the grid to insert extra cell
+		var Lastline = [].concat.apply([], math.subset(grid, math.index(math.range(0, dim), 0))._data);
+		grid.subset(math.index(math.range(0, dim), 0), self.getRandomInit(Lastline));
+		gameConstants.grid = grid;
+	};
+
+	//function when left key is pressed
+	this.left = function () {
+		var stack = [];
+		for (var i = 0; i < grid._data.length; i++) {
+			stack.push(self.updateLineReverse(grid._data[i], 1));
+		}
+		//convert updated array back to matrix
+		grid = math.matrix(stack);
+		//slicing last column of the grid to insert extra cell
+		var Lastline = [].concat.apply([], math.subset(grid, math.index(math.range(0, dim), grid._data.length - 1))._data);
+		grid.subset(math.index(math.range(0, 4), grid._data.length - 1), self.getRandomInit(Lastline));
+		gameConstants.grid = grid;
+	};
+
+	this.updateLine = function (line, reverse) {
+		//remove zeros from line
+		line = self.sliceZeros(line, reverse);
+		var newLine;
+		//update line
+		line.every(function (val, index) {
+			if (index != line.length - 1) {
+				if (val != 0 && line[index] == line[index + 1]) {
+					var end = index + 2 > line.length ? index : index + 2;
+					line[index] += line[index + 1];
+					gameConstants.currScore += line[index];
+					var start = line.slice(0, index + 1);
+					var sliced = line.slice(end);
+					if (reverse) {
+						var r = sliced.concat([0]);
+						newLine = start.concat(r);
+					} else {
+						var temp = [0].concat(start);
+						newLine = temp.concat(sliced);
+					}
+					return false;
+				} else {
+
+					return true;
+				}
+			} else newLine = line;
+		});
+		return newLine;
+	};
+
+	this.updateLineReverse = function (line, reverse) {
+		//remove zeros from line
+		line = self.sliceZeros(line, reverse);
+		var flag = true;
+		newLine = line;
+		//updating line and returning
+		for (var index = line.length - 1; index > 0 && flag == true; index--) {
+			if (line[index] != 0 && line[index] == line[index - 1]) {
+				var end = index;
+				line[index] += line[index - 1];
+				gameConstants.currScore += line[index];
+				var start = line.slice(0, index - 1);
+				var sliced = line.slice(end);
+				if (reverse) {
+					var temp = sliced.concat([0]);
+					newLine = start.concat(temp);
+				} else {
+					var temp = [0].concat(start);
+					newLine = temp.concat(sliced);
+				}
+
+				flag = false;
+			} else {
+
+				flag = true;
+			}
+		}
+		return newLine;
+	};
+	//function to check the status of game
+	this.checkGameStatus = function () {
+		var flag = true;
+		grid._data.every(function (val, index) {
+			if (val.indexOf(2048) > -1) {
+				window.location = "/game/" + gameConstants.playerName + "/score?score=" + gameConstants.currScore;
+			}
+		});
+	};
+	//function to remove zeros from given line as parameter
+	this.sliceZeros = function (line, reverse) {
+		var temp = [];
+		for (var i = 0; i < line.length;) {
+			if (line[i] == 0) {
+				line.splice(i, 1);
+				temp.push(0);
+			} else i++;
+		};
+		if (reverse) line = line.concat(temp);else line = temp.concat(line);
+		return line;
+	};
+	//function to get random array
+	this.getRamdomArray = function (len) {
+		var arr = [];
+		for (var i = 0; i < len; i) {
+			var rand = Math.floor(Math.random() * len);
+			if (arr.indexOf(rand) == -1) {
+				arr[i] = rand;
+				i++;
+			}
+		}
+		return arr;
+	};
+	//function to get updated line by adding new cell after grid
+	this.getRandomInit = function (line) {
+		var num = [2, 4];
+		var temp = self.getRamdomArray(4);
+		temp.every(function (val, index) {
+			if (line[val] == 0) {
+				line[val] = num[Math.floor(Math.random() * num.length)];
+				return false;
+			} else return true;
+		});
+		return line;
+	};
+};
+module.exports = GridClass;
+
+},{}]},{},[223]);

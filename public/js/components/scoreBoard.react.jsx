@@ -39,12 +39,12 @@ var ScoreBoard=React.createClass({
   },
 
   render:function(){
-  	
+  	console.log(this.props.classname);
 	  	return(
-				<div className={this.props.buttonClass}>
-	  			<h2>{this.state.playername}</h2>
+				<div className={this.props.classname}>
+		  			<h2>{this.state.playername}</h2>
 					<CurrScore currentScore={this.state.currScores} onChange={this.handleScoreChange}/>
-	  			<HighScore score={this.state.highScore}/>
+	  				<HighScore score={this.state.highScore}/>
 	 				<Button redir={this.props.redir?this.props.redir:this.state.redir} value={this.props.value} />
 	  		</div>
 	  		)

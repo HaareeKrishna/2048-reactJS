@@ -5,7 +5,7 @@ var ReactDOM=require("react-dom")
 var DonePage=React.createClass({
 	render:function(){
 		return(
-			<ScoreBoard playerName={this.props.params.playerName} value="Try again?" buttonclass="scores" redir="/#/"/>
+			<ScoreBoard playerName={this.props.params.playerName} value="Try again?" classname="scores" redir="/#/game/"/>
 			)
 	}
 });
