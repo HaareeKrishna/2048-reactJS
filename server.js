@@ -5,12 +5,9 @@ var bodyParser = require('body-parser');
 app.use(express.static(__dirname+'/public'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use("/game",game);
 app.use("/",function(req,res,next){
 	res.sendFile(__dirname +"/public/");
 });
-
-
-
-
-app.listen(8086);
+app.listen(80);
