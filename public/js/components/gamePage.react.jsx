@@ -11,7 +11,7 @@ var GamePage=React.createClass({
 				<Grid />
 				<ScoreBoard playerName={this.props.params.playerName} classname="info" value="GiveUp?"/>
 			</div>
-			)
+		)
 	
 	}
 })

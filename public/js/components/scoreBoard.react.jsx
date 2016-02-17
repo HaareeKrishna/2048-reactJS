@@ -2,49 +2,27 @@ var React=require("react");
 var HighScore=require("./highScore.react.jsx")
 var CurrScore=require("./currScore.react.jsx")
 var Button=require("./button.react.jsx")
-var $ = require ('jquery')
 //scoreboard page
 
 var ScoreBoard=React.createClass({
 	getInitialState: function() {
     return {
-      playerName: '',
-      highScore: 0,
-      currScores:0
+      playername: this.props.playerName,
     };
   },
   handleScoreChange:function(score){	
   	//handle score changed in currScore component
   	this.setState({
-  		currScore:score.currScore,
-  		redir:"/game/"+this.state.playername+"/score?score="+score.currScore
-  	})
+  		currScore:score.currScores,
+  		redir:"/game/"+this.props.playerName+"/score?score="+score.currScores
+ 	 	})
 	},
-	componentWillMount: function() {
-  		var source="/game/"+this.props.playerName; 
-	  	//making ajax call to get info of player
-	    this.serverRequest = $.get(source, function (result) {
-	      this.setState({
-	      	currScores:result.currScore?result.currScore:0,
-	        playername: result.userName,
-	        highScore: result.scores
-	      });
-
-	    }.bind(this));
- 	},
-
-  componentWillUnmount: function() {
-  	//before unmounting aborting the request
-    this.serverRequest.abort();
-  },
-
-  render:function(){
-  	console.log(this.state.currScores);
+render:function(){
 	  	return(
 				<div className={this.props.classname}>
 		  			<h2>{this.state.playername}</h2>
-					<CurrScore currentScore={this.state.currScores} onChange={this.handleScoreChange}/>
-	  				<HighScore score={this.state.highScore}/>
+					<CurrScore playerName={this.props.playerName} onChange={this.handleScoreChange}/>
+	  				<HighScore playerName={this.props.playerName}/>
 	 				<Button redir={this.props.redir?this.props.redir:this.state.redir} value={this.props.value} />
 	  		</div>
 	  		)

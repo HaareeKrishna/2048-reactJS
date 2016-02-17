@@ -34404,59 +34404,69 @@ module.exports = Button;
 
 var React = require("react");
 var GridStore = require("../store/gridStore.jsx");
+var $ = require('jquery');
 //current score board component
 var CurrentScore = React.createClass({
-	displayName: "CurrentScore",
+  displayName: "CurrentScore",
 
-	getInitialState: function () {
-		return {
-			//initializing current score to 0
-			currScore: 0
+  getInitialState: function () {
+    return {
+      //initializing current score to 0
+      currScores: 0
 
-		};
-	},
-	componentDidMount: function () {
-		GridStore.addChangeListener(this._onChange);
-	},
-	render: function () {
-		return(
-			//current score div
-			React.createElement(
-				"div",
-				null,
-				React.createElement(
-					"span",
-					null,
-					React.createElement(
-						"h4",
-						{ className: "score" },
-						"SCORE",
-						React.createElement("br", null)
-					),
-					React.createElement(
-						"h1",
-						{ id: "currScore", className: "num" },
-						this.props.currentScore ? this.props.currentScore : this.state.currScore
-					)
-				)
-			)
-		);
-	},
-	_onChange: function () {
-		this.setState(getCurrentScore());
-		this.props.onChange(getCurrentScore());
-	}
+    };
+  },
+  componentWillMount: function () {
+    var source = "/game/" + this.props.playerName;
+    //making ajax call to get info of player
+    this.serverRequest = $.get(source, function (result) {
+      this.setState({
+        currScores: result.currScore
+      });
+    }.bind(this));
+  },
+  componentWillUnmount: function () {
+    //before unmounting aborting the request
+    this.serverRequest.abort();
+  },
+  componentDidMount: function () {
+    GridStore.addChangeListener(this._onChange);
+  },
+  render: function () {
+    return(
+      //current score div
+      React.createElement(
+        "span",
+        null,
+        React.createElement(
+          "h4",
+          { className: "score" },
+          "SCORE",
+          React.createElement("br", null)
+        ),
+        React.createElement(
+          "h1",
+          { id: "currScore", className: "num" },
+          this.state.currScores
+        )
+      )
+    );
+  },
+  _onChange: function () {
+    this.setState(getCurrentScore());
+    this.props.onChange(getCurrentScore());
+  }
 
 });
 //gets score from store
 var getCurrentScore = function () {
-	return {
-		currScore: GridStore.getCurrentScore()
-	};
+  return {
+    currScores: GridStore.getCurrentScore()
+  };
 };
 module.exports = CurrentScore;
 
-},{"../store/gridStore.jsx":234,"react":216}],226:[function(require,module,exports){
+},{"../store/gridStore.jsx":234,"jquery":3,"react":216}],226:[function(require,module,exports){
 var React = require("react");
 var ScoreBoard = require("./scoreBoard.react.jsx");
 var ReactDOM = require("react-dom");
@@ -34573,6 +34583,7 @@ module.exports = Grid;
 
 },{"../actions/gridActionCreators.jsx":222,"../store/gridStore.jsx":234,"react":216}],229:[function(require,module,exports){
 var React = require("react");
+var $ = require('jquery');
 //current score board component
 var HighScore = React.createClass({
   displayName: "HighScore",
@@ -34583,6 +34594,19 @@ var HighScore = React.createClass({
       //initializing high score to 0
       highScore: 0
     };
+  },
+  componentWillMount: function () {
+    var source = "/game/" + this.props.playerName;
+    //making ajax call to get info of player
+    this.serverRequest = $.get(source, function (result) {
+      this.setState({
+        highScore: result.scores
+      });
+    }.bind(this));
+  },
+  componentWillUnmount: function () {
+    //before unmounting aborting the request
+    this.serverRequest.abort();
   },
   render: function () {
     return(
@@ -34599,7 +34623,7 @@ var HighScore = React.createClass({
         React.createElement(
           "h1",
           { className: "num" },
-          this.props.score
+          this.state.highScore
         )
       )
     );
@@ -34607,7 +34631,7 @@ var HighScore = React.createClass({
 });
 module.exports = HighScore;
 
-},{"react":216}],230:[function(require,module,exports){
+},{"jquery":3,"react":216}],230:[function(require,module,exports){
 var React = require("react");
 
 //login page to collect name from player
@@ -34640,63 +34664,42 @@ var React = require("react");
 var HighScore = require("./highScore.react.jsx");
 var CurrScore = require("./currScore.react.jsx");
 var Button = require("./button.react.jsx");
-var $ = require('jquery');
 //scoreboard page
 
 var ScoreBoard = React.createClass({
-  displayName: "ScoreBoard",
+	displayName: "ScoreBoard",
 
-  getInitialState: function () {
-    return {
-      playerName: '',
-      highScore: 0,
-      currScores: 0
-    };
-  },
-  handleScoreChange: function (score) {
-    //handle score changed in currScore component
-    this.setState({
-      currScore: score.currScore,
-      redir: "/game/" + this.state.playername + "/score?score=" + score.currScore
-    });
-  },
-  componentWillMount: function () {
-    var source = "/game/" + this.props.playerName;
-    //making ajax call to get info of player
-    this.serverRequest = $.get(source, function (result) {
-      this.setState({
-        currScores: result.currScore ? result.currScore : 0,
-        playername: result.userName,
-        highScore: result.scores
-      });
-    }.bind(this));
-  },
-
-  componentWillUnmount: function () {
-    //before unmounting aborting the request
-    this.serverRequest.abort();
-  },
-
-  render: function () {
-    console.log(this.state.currScores);
-    return React.createElement(
-      "div",
-      { className: this.props.classname },
-      React.createElement(
-        "h2",
-        null,
-        this.state.playername
-      ),
-      React.createElement(CurrScore, { currentScore: this.state.currScores, onChange: this.handleScoreChange }),
-      React.createElement(HighScore, { score: this.state.highScore }),
-      React.createElement(Button, { redir: this.props.redir ? this.props.redir : this.state.redir, value: this.props.value })
-    );
-  }
+	getInitialState: function () {
+		return {
+			playername: this.props.playerName
+		};
+	},
+	handleScoreChange: function (score) {
+		//handle score changed in currScore component
+		this.setState({
+			currScore: score.currScores,
+			redir: "/game/" + this.props.playerName + "/score?score=" + score.currScores
+		});
+	},
+	render: function () {
+		return React.createElement(
+			"div",
+			{ className: this.props.classname },
+			React.createElement(
+				"h2",
+				null,
+				this.state.playername
+			),
+			React.createElement(CurrScore, { playerName: this.props.playerName, onChange: this.handleScoreChange }),
+			React.createElement(HighScore, { playerName: this.props.playerName }),
+			React.createElement(Button, { redir: this.props.redir ? this.props.redir : this.state.redir, value: this.props.value })
+		);
+	}
 });
 
 module.exports = ScoreBoard;
 
-},{"./button.react.jsx":224,"./currScore.react.jsx":225,"./highScore.react.jsx":229,"jquery":3,"react":216}],232:[function(require,module,exports){
+},{"./button.react.jsx":224,"./currScore.react.jsx":225,"./highScore.react.jsx":229,"react":216}],232:[function(require,module,exports){
 //storing defaults and variables in seperate constants.js file
 
 var gridData = {
