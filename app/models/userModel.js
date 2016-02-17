@@ -1,7 +1,7 @@
 var mongo=require("mongodb");
 var mongoClient=mongo.MongoClient;
 function db(cb){
-	mongoClient.connect("mongodb://localhost/gameDb",function(err,db){
+	mongoClient.connect("mongodb://haaree:2048game@ds011268.mongolab.com:11268/gamedb-two",function(err,db){
 		cb(db);
 	});
 }
@@ -29,8 +29,9 @@ var app={
 	},
 	update:function(userName,score){
 		db(function(db){
-			db.collection("players").update({userName:userName},{$max:{scores:parseInt(score)}},{currScore:parseInt(score)},function(err,data){
-			});
+			db.collection("players").update({userName:userName},{$max:{scores:parseInt(score)}});
+				db.collection("players").update({userName:userName},{currScore:parseInt(score)});
+			
 		});
 	}
 	}

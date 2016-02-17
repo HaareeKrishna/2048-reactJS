@@ -34665,7 +34665,7 @@ var ScoreBoard = React.createClass({
     //making ajax call to get info of player
     this.serverRequest = $.get(source, function (result) {
       this.setState({
-        currScores: result.currentScore ? result.currentScore : 0,
+        currScores: result.currScore ? result.currScore : 0,
         playername: result.userName,
         highScore: result.scores
       });
@@ -34678,7 +34678,7 @@ var ScoreBoard = React.createClass({
   },
 
   render: function () {
-    console.log(this.props.classname);
+    console.log(this.state.currScores);
     return React.createElement(
       "div",
       { className: this.props.classname },

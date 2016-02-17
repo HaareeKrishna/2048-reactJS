@@ -10,4 +10,4 @@ app.use("/game",game);
 app.use("/",function(req,res,next){
 	res.sendFile(__dirname +"/public/");
 });
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8086);
