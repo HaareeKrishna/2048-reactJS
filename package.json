@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -31,5 +31,15 @@
     "react-tools": "^0.13.3"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "",
+  "jest": {
+    "preprocessCachingDisabled": "true",
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/fbjs"
+    ]
+  }
 }

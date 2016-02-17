@@ -1,5 +1,5 @@
 jest.dontMock('../../components/currScore.react.jsx');
-
+config.preprocessCachingDisabled=true;
 
 jest.autoMockOff();
 
