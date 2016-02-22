@@ -32,7 +32,6 @@
   "devDependencies": {},
   "jest": {
     "preprocessCachingDisabled": "false",
-    "setupTestFrameworkScriptFile": "<rootDir>/public/js/lib/math.js",
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",
