@@ -21,6 +21,5 @@ var router = require('express').Router();
 		userModel.update(req.params.name,req.query.score);	
 		res.redirect("/#/game/"+req.params.name+"/done");
 	})
-	
 
 module.exports=router;

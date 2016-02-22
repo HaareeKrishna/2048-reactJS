@@ -1,20 +1,18 @@
-jest.dontMock('../../components/login.react.jsx');
-
-
-jest.autoMockOff();
-
+jest.dontMock("../../components/login.react.jsx");
 var ReactDOM = require('react-dom'),
     Login = require('../../components/login.react.jsx'),
     TestUtils = require('react-addons-test-utils'),
-    React = require('react');	
+    Button = require('../../components/button.react.jsx'),
+    React = require('react');
 
 describe('current score board',function(){
 	beforeEach(function() {
-		var value="username"
     	this.component = TestUtils.renderIntoDocument(<Login />);
+      this.formNode = TestUtils.findRenderedDOMComponentWithTag(this.component,"form")
+  });
 
-	});
 	it("should exists ",function(){
-		expect(TestUtils.isCompositeComponent(this.component)).toBeTruthy();
+		expect(this.formNode).not.toBe("null");
+    TestUtils.Simulate.click(TestUtils.findRenderedDOMComponentWithClass(this.component,"playerButton"));
 	})
 });

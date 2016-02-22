@@ -33990,6 +33990,318 @@ module.exports = warning;
 module.exports = require('./lib/React');
 
 },{"./lib/React":84}],217:[function(require,module,exports){
+arguments[4][61][0].apply(exports,arguments)
+},{"./ReactMount":281,"./findDOMNode":324,"dup":61,"fbjs/lib/focusNode":354}],218:[function(require,module,exports){
+arguments[4][62][0].apply(exports,arguments)
+},{"./EventConstants":230,"./EventPropagators":234,"./FallbackCompositionState":235,"./SyntheticCompositionEvent":306,"./SyntheticInputEvent":310,"dup":62,"fbjs/lib/ExecutionEnvironment":346,"fbjs/lib/keyOf":364}],219:[function(require,module,exports){
+arguments[4][63][0].apply(exports,arguments)
+},{"dup":63}],220:[function(require,module,exports){
+arguments[4][64][0].apply(exports,arguments)
+},{"./CSSProperty":219,"./ReactPerf":287,"./dangerousStyleValue":321,"_process":2,"dup":64,"fbjs/lib/ExecutionEnvironment":346,"fbjs/lib/camelizeStyleName":348,"fbjs/lib/hyphenateStyleName":359,"fbjs/lib/memoizeStringOnly":366,"fbjs/lib/warning":371}],221:[function(require,module,exports){
+arguments[4][65][0].apply(exports,arguments)
+},{"./Object.assign":238,"./PooledClass":239,"_process":2,"dup":65,"fbjs/lib/invariant":360}],222:[function(require,module,exports){
+arguments[4][66][0].apply(exports,arguments)
+},{"./EventConstants":230,"./EventPluginHub":231,"./EventPropagators":234,"./ReactUpdates":299,"./SyntheticEvent":308,"./getEventTarget":330,"./isEventSupported":335,"./isTextInputElement":336,"dup":66,"fbjs/lib/ExecutionEnvironment":346,"fbjs/lib/keyOf":364}],223:[function(require,module,exports){
+arguments[4][67][0].apply(exports,arguments)
+},{"dup":67}],224:[function(require,module,exports){
+arguments[4][68][0].apply(exports,arguments)
+},{"./Danger":227,"./ReactMultiChildUpdateTypes":283,"./ReactPerf":287,"./setInnerHTML":340,"./setTextContent":341,"_process":2,"dup":68,"fbjs/lib/invariant":360}],225:[function(require,module,exports){
+arguments[4][69][0].apply(exports,arguments)
+},{"_process":2,"dup":69,"fbjs/lib/invariant":360}],226:[function(require,module,exports){
+arguments[4][70][0].apply(exports,arguments)
+},{"./DOMProperty":225,"./ReactPerf":287,"./quoteAttributeValueForBrowser":338,"_process":2,"dup":70,"fbjs/lib/warning":371}],227:[function(require,module,exports){
+arguments[4][71][0].apply(exports,arguments)
+},{"_process":2,"dup":71,"fbjs/lib/ExecutionEnvironment":346,"fbjs/lib/createNodesFromMarkup":351,"fbjs/lib/emptyFunction":352,"fbjs/lib/getMarkupWrap":356,"fbjs/lib/invariant":360}],228:[function(require,module,exports){
+arguments[4][72][0].apply(exports,arguments)
+},{"dup":72,"fbjs/lib/keyOf":364}],229:[function(require,module,exports){
+arguments[4][73][0].apply(exports,arguments)
+},{"./EventConstants":230,"./EventPropagators":234,"./ReactMount":281,"./SyntheticMouseEvent":312,"dup":73,"fbjs/lib/keyOf":364}],230:[function(require,module,exports){
+arguments[4][74][0].apply(exports,arguments)
+},{"dup":74,"fbjs/lib/keyMirror":363}],231:[function(require,module,exports){
+arguments[4][75][0].apply(exports,arguments)
+},{"./EventPluginRegistry":232,"./EventPluginUtils":233,"./ReactErrorUtils":272,"./accumulateInto":318,"./forEachAccumulated":326,"_process":2,"dup":75,"fbjs/lib/invariant":360,"fbjs/lib/warning":371}],232:[function(require,module,exports){
+arguments[4][76][0].apply(exports,arguments)
+},{"_process":2,"dup":76,"fbjs/lib/invariant":360}],233:[function(require,module,exports){
+arguments[4][77][0].apply(exports,arguments)
+},{"./EventConstants":230,"./ReactErrorUtils":272,"_process":2,"dup":77,"fbjs/lib/invariant":360,"fbjs/lib/warning":371}],234:[function(require,module,exports){
+arguments[4][78][0].apply(exports,arguments)
+},{"./EventConstants":230,"./EventPluginHub":231,"./accumulateInto":318,"./forEachAccumulated":326,"_process":2,"dup":78,"fbjs/lib/warning":371}],235:[function(require,module,exports){
+arguments[4][79][0].apply(exports,arguments)
+},{"./Object.assign":238,"./PooledClass":239,"./getTextContentAccessor":333,"dup":79}],236:[function(require,module,exports){
+arguments[4][80][0].apply(exports,arguments)
+},{"./DOMProperty":225,"dup":80,"fbjs/lib/ExecutionEnvironment":346}],237:[function(require,module,exports){
+arguments[4][81][0].apply(exports,arguments)
+},{"./ReactPropTypeLocations":289,"./ReactPropTypes":290,"_process":2,"dup":81,"fbjs/lib/invariant":360,"fbjs/lib/warning":371}],238:[function(require,module,exports){
+arguments[4][82][0].apply(exports,arguments)
+},{"dup":82}],239:[function(require,module,exports){
+arguments[4][83][0].apply(exports,arguments)
+},{"_process":2,"dup":83,"fbjs/lib/invariant":360}],240:[function(require,module,exports){
+arguments[4][84][0].apply(exports,arguments)
+},{"./Object.assign":238,"./ReactDOM":251,"./ReactDOMServer":261,"./ReactIsomorphic":279,"./deprecated":322,"dup":84}],241:[function(require,module,exports){
+arguments[4][85][0].apply(exports,arguments)
+},{"./ReactInstanceMap":278,"./findDOMNode":324,"_process":2,"dup":85,"fbjs/lib/warning":371}],242:[function(require,module,exports){
+arguments[4][86][0].apply(exports,arguments)
+},{"./EventConstants":230,"./EventPluginHub":231,"./EventPluginRegistry":232,"./Object.assign":238,"./ReactEventEmitterMixin":273,"./ReactPerf":287,"./ViewportMetrics":317,"./isEventSupported":335,"dup":86}],243:[function(require,module,exports){
+arguments[4][87][0].apply(exports,arguments)
+},{"./ReactReconciler":292,"./instantiateReactComponent":334,"./shouldUpdateReactComponent":342,"./traverseAllChildren":343,"_process":2,"dup":87,"fbjs/lib/warning":371}],244:[function(require,module,exports){
+arguments[4][88][0].apply(exports,arguments)
+},{"./PooledClass":239,"./ReactElement":268,"./traverseAllChildren":343,"dup":88,"fbjs/lib/emptyFunction":352}],245:[function(require,module,exports){
+arguments[4][89][0].apply(exports,arguments)
+},{"./Object.assign":238,"./ReactComponent":246,"./ReactElement":268,"./ReactNoopUpdateQueue":285,"./ReactPropTypeLocationNames":288,"./ReactPropTypeLocations":289,"_process":2,"dup":89,"fbjs/lib/emptyObject":353,"fbjs/lib/invariant":360,"fbjs/lib/keyMirror":363,"fbjs/lib/keyOf":364,"fbjs/lib/warning":371}],246:[function(require,module,exports){
+arguments[4][90][0].apply(exports,arguments)
+},{"./ReactNoopUpdateQueue":285,"./canDefineProperty":320,"_process":2,"dup":90,"fbjs/lib/emptyObject":353,"fbjs/lib/invariant":360,"fbjs/lib/warning":371}],247:[function(require,module,exports){
+arguments[4][91][0].apply(exports,arguments)
+},{"./ReactDOMIDOperations":256,"./ReactMount":281,"dup":91}],248:[function(require,module,exports){
+arguments[4][92][0].apply(exports,arguments)
+},{"_process":2,"dup":92,"fbjs/lib/invariant":360}],249:[function(require,module,exports){
+arguments[4][93][0].apply(exports,arguments)
+},{"./Object.assign":238,"./ReactComponentEnvironment":248,"./ReactCurrentOwner":250,"./ReactElement":268,"./ReactInstanceMap":278,"./ReactPerf":287,"./ReactPropTypeLocationNames":288,"./ReactPropTypeLocations":289,"./ReactReconciler":292,"./ReactUpdateQueue":298,"./shouldUpdateReactComponent":342,"_process":2,"dup":93,"fbjs/lib/emptyObject":353,"fbjs/lib/invariant":360,"fbjs/lib/warning":371}],250:[function(require,module,exports){
+arguments[4][94][0].apply(exports,arguments)
+},{"dup":94}],251:[function(require,module,exports){
+arguments[4][95][0].apply(exports,arguments)
+},{"./ReactCurrentOwner":250,"./ReactDOMTextComponent":262,"./ReactDefaultInjection":265,"./ReactInstanceHandles":277,"./ReactMount":281,"./ReactPerf":287,"./ReactReconciler":292,"./ReactUpdates":299,"./ReactVersion":300,"./findDOMNode":324,"./renderSubtreeIntoContainer":339,"_process":2,"dup":95,"fbjs/lib/ExecutionEnvironment":346,"fbjs/lib/warning":371}],252:[function(require,module,exports){
+arguments[4][96][0].apply(exports,arguments)
+},{"dup":96}],253:[function(require,module,exports){
+arguments[4][97][0].apply(exports,arguments)
+},{"./AutoFocusUtils":217,"./CSSPropertyOperations":220,"./DOMProperty":225,"./DOMPropertyOperations":226,"./EventConstants":230,"./Object.assign":238,"./ReactBrowserEventEmitter":242,"./ReactComponentBrowserEnvironment":247,"./ReactDOMButton":252,"./ReactDOMInput":257,"./ReactDOMOption":258,"./ReactDOMSelect":259,"./ReactDOMTextarea":263,"./ReactMount":281,"./ReactMultiChild":282,"./ReactPerf":287,"./ReactUpdateQueue":298,"./canDefineProperty":320,"./escapeTextContentForBrowser":323,"./isEventSupported":335,"./setInnerHTML":340,"./setTextContent":341,"./validateDOMNesting":344,"_process":2,"dup":97,"fbjs/lib/invariant":360,"fbjs/lib/keyOf":364,"fbjs/lib/shallowEqual":369,"fbjs/lib/warning":371}],254:[function(require,module,exports){
+arguments[4][98][0].apply(exports,arguments)
+},{"./ReactElement":268,"./ReactElementValidator":269,"_process":2,"dup":98,"fbjs/lib/mapObject":365}],255:[function(require,module,exports){
+arguments[4][99][0].apply(exports,arguments)
+},{"dup":99}],256:[function(require,module,exports){
+arguments[4][100][0].apply(exports,arguments)
+},{"./DOMChildrenOperations":224,"./DOMPropertyOperations":226,"./ReactMount":281,"./ReactPerf":287,"_process":2,"dup":100,"fbjs/lib/invariant":360}],257:[function(require,module,exports){
+arguments[4][101][0].apply(exports,arguments)
+},{"./LinkedValueUtils":237,"./Object.assign":238,"./ReactDOMIDOperations":256,"./ReactMount":281,"./ReactUpdates":299,"_process":2,"dup":101,"fbjs/lib/invariant":360}],258:[function(require,module,exports){
+arguments[4][102][0].apply(exports,arguments)
+},{"./Object.assign":238,"./ReactChildren":244,"./ReactDOMSelect":259,"_process":2,"dup":102,"fbjs/lib/warning":371}],259:[function(require,module,exports){
+arguments[4][103][0].apply(exports,arguments)
+},{"./LinkedValueUtils":237,"./Object.assign":238,"./ReactMount":281,"./ReactUpdates":299,"_process":2,"dup":103,"fbjs/lib/warning":371}],260:[function(require,module,exports){
+arguments[4][104][0].apply(exports,arguments)
+},{"./getNodeForCharacterOffset":332,"./getTextContentAccessor":333,"dup":104,"fbjs/lib/ExecutionEnvironment":346}],261:[function(require,module,exports){
+arguments[4][105][0].apply(exports,arguments)
+},{"./ReactDefaultInjection":265,"./ReactServerRendering":296,"./ReactVersion":300,"dup":105}],262:[function(require,module,exports){
+arguments[4][106][0].apply(exports,arguments)
+},{"./DOMChildrenOperations":224,"./DOMPropertyOperations":226,"./Object.assign":238,"./ReactComponentBrowserEnvironment":247,"./ReactMount":281,"./escapeTextContentForBrowser":323,"./setTextContent":341,"./validateDOMNesting":344,"_process":2,"dup":106}],263:[function(require,module,exports){
+arguments[4][107][0].apply(exports,arguments)
+},{"./LinkedValueUtils":237,"./Object.assign":238,"./ReactDOMIDOperations":256,"./ReactUpdates":299,"_process":2,"dup":107,"fbjs/lib/invariant":360,"fbjs/lib/warning":371}],264:[function(require,module,exports){
+arguments[4][108][0].apply(exports,arguments)
+},{"./Object.assign":238,"./ReactUpdates":299,"./Transaction":316,"dup":108,"fbjs/lib/emptyFunction":352}],265:[function(require,module,exports){
+arguments[4][109][0].apply(exports,arguments)
+},{"./BeforeInputEventPlugin":218,"./ChangeEventPlugin":222,"./ClientReactRootIndex":223,"./DefaultEventPluginOrder":228,"./EnterLeaveEventPlugin":229,"./HTMLDOMPropertyConfig":236,"./ReactBrowserComponentMixin":241,"./ReactComponentBrowserEnvironment":247,"./ReactDOMComponent":253,"./ReactDOMTextComponent":262,"./ReactDefaultBatchingStrategy":264,"./ReactDefaultPerf":266,"./ReactEventListener":274,"./ReactInjection":275,"./ReactInstanceHandles":277,"./ReactMount":281,"./ReactReconcileTransaction":291,"./SVGDOMPropertyConfig":301,"./SelectEventPlugin":302,"./ServerReactRootIndex":303,"./SimpleEventPlugin":304,"_process":2,"dup":109,"fbjs/lib/ExecutionEnvironment":346}],266:[function(require,module,exports){
+arguments[4][110][0].apply(exports,arguments)
+},{"./DOMProperty":225,"./ReactDefaultPerfAnalysis":267,"./ReactMount":281,"./ReactPerf":287,"dup":110,"fbjs/lib/performanceNow":368}],267:[function(require,module,exports){
+arguments[4][111][0].apply(exports,arguments)
+},{"./Object.assign":238,"dup":111}],268:[function(require,module,exports){
+arguments[4][112][0].apply(exports,arguments)
+},{"./Object.assign":238,"./ReactCurrentOwner":250,"./canDefineProperty":320,"_process":2,"dup":112}],269:[function(require,module,exports){
+arguments[4][113][0].apply(exports,arguments)
+},{"./ReactCurrentOwner":250,"./ReactElement":268,"./ReactPropTypeLocationNames":288,"./ReactPropTypeLocations":289,"./canDefineProperty":320,"./getIteratorFn":331,"_process":2,"dup":113,"fbjs/lib/invariant":360,"fbjs/lib/warning":371}],270:[function(require,module,exports){
+arguments[4][114][0].apply(exports,arguments)
+},{"./Object.assign":238,"./ReactElement":268,"./ReactEmptyComponentRegistry":271,"./ReactReconciler":292,"dup":114}],271:[function(require,module,exports){
+arguments[4][115][0].apply(exports,arguments)
+},{"dup":115}],272:[function(require,module,exports){
+arguments[4][116][0].apply(exports,arguments)
+},{"_process":2,"dup":116}],273:[function(require,module,exports){
+arguments[4][117][0].apply(exports,arguments)
+},{"./EventPluginHub":231,"dup":117}],274:[function(require,module,exports){
+arguments[4][118][0].apply(exports,arguments)
+},{"./Object.assign":238,"./PooledClass":239,"./ReactInstanceHandles":277,"./ReactMount":281,"./ReactUpdates":299,"./getEventTarget":330,"dup":118,"fbjs/lib/EventListener":345,"fbjs/lib/ExecutionEnvironment":346,"fbjs/lib/getUnboundedScrollPosition":357}],275:[function(require,module,exports){
+arguments[4][119][0].apply(exports,arguments)
+},{"./DOMProperty":225,"./EventPluginHub":231,"./ReactBrowserEventEmitter":242,"./ReactClass":245,"./ReactComponentEnvironment":248,"./ReactEmptyComponent":270,"./ReactNativeComponent":284,"./ReactPerf":287,"./ReactRootIndex":294,"./ReactUpdates":299,"dup":119}],276:[function(require,module,exports){
+arguments[4][120][0].apply(exports,arguments)
+},{"./ReactDOMSelection":260,"dup":120,"fbjs/lib/containsNode":349,"fbjs/lib/focusNode":354,"fbjs/lib/getActiveElement":355}],277:[function(require,module,exports){
+arguments[4][121][0].apply(exports,arguments)
+},{"./ReactRootIndex":294,"_process":2,"dup":121,"fbjs/lib/invariant":360}],278:[function(require,module,exports){
+arguments[4][122][0].apply(exports,arguments)
+},{"dup":122}],279:[function(require,module,exports){
+arguments[4][123][0].apply(exports,arguments)
+},{"./Object.assign":238,"./ReactChildren":244,"./ReactClass":245,"./ReactComponent":246,"./ReactDOMFactories":254,"./ReactElement":268,"./ReactElementValidator":269,"./ReactPropTypes":290,"./ReactVersion":300,"./onlyChild":337,"_process":2,"dup":123}],280:[function(require,module,exports){
+arguments[4][124][0].apply(exports,arguments)
+},{"./adler32":319,"dup":124}],281:[function(require,module,exports){
+arguments[4][125][0].apply(exports,arguments)
+},{"./DOMProperty":225,"./Object.assign":238,"./ReactBrowserEventEmitter":242,"./ReactCurrentOwner":250,"./ReactDOMFeatureFlags":255,"./ReactElement":268,"./ReactEmptyComponentRegistry":271,"./ReactInstanceHandles":277,"./ReactInstanceMap":278,"./ReactMarkupChecksum":280,"./ReactPerf":287,"./ReactReconciler":292,"./ReactUpdateQueue":298,"./ReactUpdates":299,"./instantiateReactComponent":334,"./setInnerHTML":340,"./shouldUpdateReactComponent":342,"./validateDOMNesting":344,"_process":2,"dup":125,"fbjs/lib/containsNode":349,"fbjs/lib/emptyObject":353,"fbjs/lib/invariant":360,"fbjs/lib/warning":371}],282:[function(require,module,exports){
+arguments[4][126][0].apply(exports,arguments)
+},{"./ReactChildReconciler":243,"./ReactComponentEnvironment":248,"./ReactCurrentOwner":250,"./ReactMultiChildUpdateTypes":283,"./ReactReconciler":292,"./flattenChildren":325,"_process":2,"dup":126}],283:[function(require,module,exports){
+arguments[4][127][0].apply(exports,arguments)
+},{"dup":127,"fbjs/lib/keyMirror":363}],284:[function(require,module,exports){
+arguments[4][128][0].apply(exports,arguments)
+},{"./Object.assign":238,"_process":2,"dup":128,"fbjs/lib/invariant":360}],285:[function(require,module,exports){
+arguments[4][129][0].apply(exports,arguments)
+},{"_process":2,"dup":129,"fbjs/lib/warning":371}],286:[function(require,module,exports){
+arguments[4][130][0].apply(exports,arguments)
+},{"_process":2,"dup":130,"fbjs/lib/invariant":360}],287:[function(require,module,exports){
+arguments[4][131][0].apply(exports,arguments)
+},{"_process":2,"dup":131}],288:[function(require,module,exports){
+arguments[4][132][0].apply(exports,arguments)
+},{"_process":2,"dup":132}],289:[function(require,module,exports){
+arguments[4][133][0].apply(exports,arguments)
+},{"dup":133,"fbjs/lib/keyMirror":363}],290:[function(require,module,exports){
+arguments[4][134][0].apply(exports,arguments)
+},{"./ReactElement":268,"./ReactPropTypeLocationNames":288,"./getIteratorFn":331,"dup":134,"fbjs/lib/emptyFunction":352}],291:[function(require,module,exports){
+arguments[4][135][0].apply(exports,arguments)
+},{"./CallbackQueue":221,"./Object.assign":238,"./PooledClass":239,"./ReactBrowserEventEmitter":242,"./ReactDOMFeatureFlags":255,"./ReactInputSelection":276,"./Transaction":316,"dup":135}],292:[function(require,module,exports){
+arguments[4][136][0].apply(exports,arguments)
+},{"./ReactRef":293,"dup":136}],293:[function(require,module,exports){
+arguments[4][137][0].apply(exports,arguments)
+},{"./ReactOwner":286,"dup":137}],294:[function(require,module,exports){
+arguments[4][138][0].apply(exports,arguments)
+},{"dup":138}],295:[function(require,module,exports){
+arguments[4][139][0].apply(exports,arguments)
+},{"dup":139}],296:[function(require,module,exports){
+arguments[4][140][0].apply(exports,arguments)
+},{"./ReactDefaultBatchingStrategy":264,"./ReactElement":268,"./ReactInstanceHandles":277,"./ReactMarkupChecksum":280,"./ReactServerBatchingStrategy":295,"./ReactServerRenderingTransaction":297,"./ReactUpdates":299,"./instantiateReactComponent":334,"_process":2,"dup":140,"fbjs/lib/emptyObject":353,"fbjs/lib/invariant":360}],297:[function(require,module,exports){
+arguments[4][141][0].apply(exports,arguments)
+},{"./CallbackQueue":221,"./Object.assign":238,"./PooledClass":239,"./Transaction":316,"dup":141,"fbjs/lib/emptyFunction":352}],298:[function(require,module,exports){
+arguments[4][142][0].apply(exports,arguments)
+},{"./Object.assign":238,"./ReactCurrentOwner":250,"./ReactElement":268,"./ReactInstanceMap":278,"./ReactUpdates":299,"_process":2,"dup":142,"fbjs/lib/invariant":360,"fbjs/lib/warning":371}],299:[function(require,module,exports){
+arguments[4][143][0].apply(exports,arguments)
+},{"./CallbackQueue":221,"./Object.assign":238,"./PooledClass":239,"./ReactPerf":287,"./ReactReconciler":292,"./Transaction":316,"_process":2,"dup":143,"fbjs/lib/invariant":360}],300:[function(require,module,exports){
+arguments[4][144][0].apply(exports,arguments)
+},{"dup":144}],301:[function(require,module,exports){
+arguments[4][145][0].apply(exports,arguments)
+},{"./DOMProperty":225,"dup":145}],302:[function(require,module,exports){
+arguments[4][146][0].apply(exports,arguments)
+},{"./EventConstants":230,"./EventPropagators":234,"./ReactInputSelection":276,"./SyntheticEvent":308,"./isTextInputElement":336,"dup":146,"fbjs/lib/ExecutionEnvironment":346,"fbjs/lib/getActiveElement":355,"fbjs/lib/keyOf":364,"fbjs/lib/shallowEqual":369}],303:[function(require,module,exports){
+arguments[4][147][0].apply(exports,arguments)
+},{"dup":147}],304:[function(require,module,exports){
+arguments[4][148][0].apply(exports,arguments)
+},{"./EventConstants":230,"./EventPropagators":234,"./ReactMount":281,"./SyntheticClipboardEvent":305,"./SyntheticDragEvent":307,"./SyntheticEvent":308,"./SyntheticFocusEvent":309,"./SyntheticKeyboardEvent":311,"./SyntheticMouseEvent":312,"./SyntheticTouchEvent":313,"./SyntheticUIEvent":314,"./SyntheticWheelEvent":315,"./getEventCharCode":327,"_process":2,"dup":148,"fbjs/lib/EventListener":345,"fbjs/lib/emptyFunction":352,"fbjs/lib/invariant":360,"fbjs/lib/keyOf":364}],305:[function(require,module,exports){
+arguments[4][149][0].apply(exports,arguments)
+},{"./SyntheticEvent":308,"dup":149}],306:[function(require,module,exports){
+arguments[4][150][0].apply(exports,arguments)
+},{"./SyntheticEvent":308,"dup":150}],307:[function(require,module,exports){
+arguments[4][151][0].apply(exports,arguments)
+},{"./SyntheticMouseEvent":312,"dup":151}],308:[function(require,module,exports){
+arguments[4][152][0].apply(exports,arguments)
+},{"./Object.assign":238,"./PooledClass":239,"_process":2,"dup":152,"fbjs/lib/emptyFunction":352,"fbjs/lib/warning":371}],309:[function(require,module,exports){
+arguments[4][153][0].apply(exports,arguments)
+},{"./SyntheticUIEvent":314,"dup":153}],310:[function(require,module,exports){
+arguments[4][154][0].apply(exports,arguments)
+},{"./SyntheticEvent":308,"dup":154}],311:[function(require,module,exports){
+arguments[4][155][0].apply(exports,arguments)
+},{"./SyntheticUIEvent":314,"./getEventCharCode":327,"./getEventKey":328,"./getEventModifierState":329,"dup":155}],312:[function(require,module,exports){
+arguments[4][156][0].apply(exports,arguments)
+},{"./SyntheticUIEvent":314,"./ViewportMetrics":317,"./getEventModifierState":329,"dup":156}],313:[function(require,module,exports){
+arguments[4][157][0].apply(exports,arguments)
+},{"./SyntheticUIEvent":314,"./getEventModifierState":329,"dup":157}],314:[function(require,module,exports){
+arguments[4][158][0].apply(exports,arguments)
+},{"./SyntheticEvent":308,"./getEventTarget":330,"dup":158}],315:[function(require,module,exports){
+arguments[4][159][0].apply(exports,arguments)
+},{"./SyntheticMouseEvent":312,"dup":159}],316:[function(require,module,exports){
+arguments[4][160][0].apply(exports,arguments)
+},{"_process":2,"dup":160,"fbjs/lib/invariant":360}],317:[function(require,module,exports){
+arguments[4][161][0].apply(exports,arguments)
+},{"dup":161}],318:[function(require,module,exports){
+arguments[4][162][0].apply(exports,arguments)
+},{"_process":2,"dup":162,"fbjs/lib/invariant":360}],319:[function(require,module,exports){
+arguments[4][163][0].apply(exports,arguments)
+},{"dup":163}],320:[function(require,module,exports){
+arguments[4][164][0].apply(exports,arguments)
+},{"_process":2,"dup":164}],321:[function(require,module,exports){
+arguments[4][165][0].apply(exports,arguments)
+},{"./CSSProperty":219,"dup":165}],322:[function(require,module,exports){
+arguments[4][166][0].apply(exports,arguments)
+},{"./Object.assign":238,"_process":2,"dup":166,"fbjs/lib/warning":371}],323:[function(require,module,exports){
+arguments[4][167][0].apply(exports,arguments)
+},{"dup":167}],324:[function(require,module,exports){
+arguments[4][168][0].apply(exports,arguments)
+},{"./ReactCurrentOwner":250,"./ReactInstanceMap":278,"./ReactMount":281,"_process":2,"dup":168,"fbjs/lib/invariant":360,"fbjs/lib/warning":371}],325:[function(require,module,exports){
+arguments[4][169][0].apply(exports,arguments)
+},{"./traverseAllChildren":343,"_process":2,"dup":169,"fbjs/lib/warning":371}],326:[function(require,module,exports){
+arguments[4][170][0].apply(exports,arguments)
+},{"dup":170}],327:[function(require,module,exports){
+arguments[4][171][0].apply(exports,arguments)
+},{"dup":171}],328:[function(require,module,exports){
+arguments[4][172][0].apply(exports,arguments)
+},{"./getEventCharCode":327,"dup":172}],329:[function(require,module,exports){
+arguments[4][173][0].apply(exports,arguments)
+},{"dup":173}],330:[function(require,module,exports){
+arguments[4][174][0].apply(exports,arguments)
+},{"dup":174}],331:[function(require,module,exports){
+arguments[4][175][0].apply(exports,arguments)
+},{"dup":175}],332:[function(require,module,exports){
+arguments[4][176][0].apply(exports,arguments)
+},{"dup":176}],333:[function(require,module,exports){
+arguments[4][177][0].apply(exports,arguments)
+},{"dup":177,"fbjs/lib/ExecutionEnvironment":346}],334:[function(require,module,exports){
+arguments[4][178][0].apply(exports,arguments)
+},{"./Object.assign":238,"./ReactCompositeComponent":249,"./ReactEmptyComponent":270,"./ReactNativeComponent":284,"_process":2,"dup":178,"fbjs/lib/invariant":360,"fbjs/lib/warning":371}],335:[function(require,module,exports){
+arguments[4][179][0].apply(exports,arguments)
+},{"dup":179,"fbjs/lib/ExecutionEnvironment":346}],336:[function(require,module,exports){
+arguments[4][180][0].apply(exports,arguments)
+},{"dup":180}],337:[function(require,module,exports){
+arguments[4][181][0].apply(exports,arguments)
+},{"./ReactElement":268,"_process":2,"dup":181,"fbjs/lib/invariant":360}],338:[function(require,module,exports){
+arguments[4][182][0].apply(exports,arguments)
+},{"./escapeTextContentForBrowser":323,"dup":182}],339:[function(require,module,exports){
+arguments[4][183][0].apply(exports,arguments)
+},{"./ReactMount":281,"dup":183}],340:[function(require,module,exports){
+arguments[4][184][0].apply(exports,arguments)
+},{"dup":184,"fbjs/lib/ExecutionEnvironment":346}],341:[function(require,module,exports){
+arguments[4][185][0].apply(exports,arguments)
+},{"./escapeTextContentForBrowser":323,"./setInnerHTML":340,"dup":185,"fbjs/lib/ExecutionEnvironment":346}],342:[function(require,module,exports){
+arguments[4][186][0].apply(exports,arguments)
+},{"dup":186}],343:[function(require,module,exports){
+arguments[4][187][0].apply(exports,arguments)
+},{"./ReactCurrentOwner":250,"./ReactElement":268,"./ReactInstanceHandles":277,"./getIteratorFn":331,"_process":2,"dup":187,"fbjs/lib/invariant":360,"fbjs/lib/warning":371}],344:[function(require,module,exports){
+arguments[4][188][0].apply(exports,arguments)
+},{"./Object.assign":238,"_process":2,"dup":188,"fbjs/lib/emptyFunction":352,"fbjs/lib/warning":371}],345:[function(require,module,exports){
+arguments[4][189][0].apply(exports,arguments)
+},{"./emptyFunction":352,"_process":2,"dup":189}],346:[function(require,module,exports){
+arguments[4][190][0].apply(exports,arguments)
+},{"dup":190}],347:[function(require,module,exports){
+arguments[4][191][0].apply(exports,arguments)
+},{"dup":191}],348:[function(require,module,exports){
+arguments[4][192][0].apply(exports,arguments)
+},{"./camelize":347,"dup":192}],349:[function(require,module,exports){
+arguments[4][193][0].apply(exports,arguments)
+},{"./isTextNode":362,"dup":193}],350:[function(require,module,exports){
+arguments[4][194][0].apply(exports,arguments)
+},{"./toArray":370,"dup":194}],351:[function(require,module,exports){
+arguments[4][195][0].apply(exports,arguments)
+},{"./ExecutionEnvironment":346,"./createArrayFromMixed":350,"./getMarkupWrap":356,"./invariant":360,"_process":2,"dup":195}],352:[function(require,module,exports){
+arguments[4][196][0].apply(exports,arguments)
+},{"dup":196}],353:[function(require,module,exports){
+arguments[4][197][0].apply(exports,arguments)
+},{"_process":2,"dup":197}],354:[function(require,module,exports){
+arguments[4][198][0].apply(exports,arguments)
+},{"dup":198}],355:[function(require,module,exports){
+arguments[4][199][0].apply(exports,arguments)
+},{"dup":199}],356:[function(require,module,exports){
+arguments[4][200][0].apply(exports,arguments)
+},{"./ExecutionEnvironment":346,"./invariant":360,"_process":2,"dup":200}],357:[function(require,module,exports){
+arguments[4][201][0].apply(exports,arguments)
+},{"dup":201}],358:[function(require,module,exports){
+arguments[4][202][0].apply(exports,arguments)
+},{"dup":202}],359:[function(require,module,exports){
+arguments[4][203][0].apply(exports,arguments)
+},{"./hyphenate":358,"dup":203}],360:[function(require,module,exports){
+arguments[4][204][0].apply(exports,arguments)
+},{"_process":2,"dup":204}],361:[function(require,module,exports){
+arguments[4][205][0].apply(exports,arguments)
+},{"dup":205}],362:[function(require,module,exports){
+arguments[4][206][0].apply(exports,arguments)
+},{"./isNode":361,"dup":206}],363:[function(require,module,exports){
+arguments[4][207][0].apply(exports,arguments)
+},{"./invariant":360,"_process":2,"dup":207}],364:[function(require,module,exports){
+arguments[4][208][0].apply(exports,arguments)
+},{"dup":208}],365:[function(require,module,exports){
+arguments[4][209][0].apply(exports,arguments)
+},{"dup":209}],366:[function(require,module,exports){
+arguments[4][210][0].apply(exports,arguments)
+},{"dup":210}],367:[function(require,module,exports){
+arguments[4][211][0].apply(exports,arguments)
+},{"./ExecutionEnvironment":346,"dup":211}],368:[function(require,module,exports){
+arguments[4][212][0].apply(exports,arguments)
+},{"./performance":367,"dup":212}],369:[function(require,module,exports){
+arguments[4][213][0].apply(exports,arguments)
+},{"dup":213}],370:[function(require,module,exports){
+arguments[4][214][0].apply(exports,arguments)
+},{"./invariant":360,"_process":2,"dup":214}],371:[function(require,module,exports){
+arguments[4][215][0].apply(exports,arguments)
+},{"./emptyFunction":352,"_process":2,"dup":215}],372:[function(require,module,exports){
+arguments[4][216][0].apply(exports,arguments)
+},{"./lib/React":240,"dup":216}],373:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34041,7 +34353,7 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":2}],218:[function(require,module,exports){
+},{"_process":2}],374:[function(require,module,exports){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -34053,7 +34365,7 @@ module.exports = invariant;
 
 module.exports.Dispatcher = require('./lib/Dispatcher');
 
-},{"./lib/Dispatcher":219}],219:[function(require,module,exports){
+},{"./lib/Dispatcher":375}],375:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
@@ -34287,7 +34599,7 @@ var Dispatcher = (function () {
 
 module.exports = Dispatcher;
 }).call(this,require('_process'))
-},{"_process":2,"fbjs/lib/invariant":217}],220:[function(require,module,exports){
+},{"_process":2,"fbjs/lib/invariant":373}],376:[function(require,module,exports){
 /* eslint-disable no-unused-vars */
 'use strict';
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -34328,28 +34640,38 @@ module.exports = Object.assign || function (target, source) {
 	return to;
 };
 
-},{}],221:[function(require,module,exports){
+},{}],377:[function(require,module,exports){
 'use strict';
 
 module.exports = require('react/lib/ReactDOM');
 
-},{"react/lib/ReactDOM":95}],222:[function(require,module,exports){
-
-
+},{"react/lib/ReactDOM":251}],378:[function(require,module,exports){
 var GameDispatcher = require("../dispatcher/gameDispatcher.jsx");
+var GameConstants = require("../constants/gameConstants");
+var direction;
 
 var app = {
-	modifyGrid: function (keyCode) {
-		GameDispatcher.dispatch({ keyCode: keyCode });
-	}
+   modifyGrid: function (keyCode) {
+      GameDispatcher.dispatch({ keyCode: keyCode });
+   }
 };
+//function to check the keycode and prepare payload for appropriate action
+/*function _check(keyCode){
+   for(grid in GameConstants.data){
+      for(keys in GameConstants.data[grid].controls){
+        if(keyCode==GameConstants.data[grid].controls[keys])
+          //direction and gridId included in payload
+          return {direction:keys};
+      }
+   }
+}*/
 module.exports = app;
 
-},{"../dispatcher/gameDispatcher.jsx":233}],223:[function(require,module,exports){
+},{"../constants/gameConstants":388,"../dispatcher/gameDispatcher.jsx":389}],379:[function(require,module,exports){
 
 var GamePage = require("./components/gamePage.react.jsx");
 var Login = require("./components/login.react.jsx");
-var DonePage = require("./components/donePage.react.jsx");
+var DonePage = require("./components/gameOver.react.jsx");
 var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
@@ -34362,24 +34684,24 @@ var ReactDOM = require('react-dom');
 
 //declaring routes
 const routes = React.createElement(
-		Router,
-		null,
-		React.createElement(Route, { path: "/game/:playerName", component: GamePage }),
-		React.createElement(Route, { path: "/game", component: Login }),
-		React.createElement(Route, { path: "/game/:playerName/done", component: DonePage })
+  Router,
+  null,
+  React.createElement(Route, { path: "/game/:playerName", component: GamePage }),
+  React.createElement(Route, { path: "/game", component: Login }),
+  React.createElement(Route, { path: "/game/:playerName/done", component: DonePage })
 );
 ReactDOM.render(React.createElement(
-		Router,
-		null,
-		routes
+  Router,
+  null,
+  routes
 ), document.getElementById('gameContainer'));
 
-},{"./components/donePage.react.jsx":226,"./components/gamePage.react.jsx":227,"./components/login.react.jsx":230,"react":216,"react-dom":221,"react-router":31}],224:[function(require,module,exports){
+},{"./components/gameOver.react.jsx":382,"./components/gamePage.react.jsx":383,"./components/login.react.jsx":386,"react":372,"react-dom":377,"react-router":31}],380:[function(require,module,exports){
 var React = require("react");
+
 //Button component which share similar style but different actions which are passed through parameters
 var Button = React.createClass({
 	displayName: "Button",
-
 
 	render: function () {
 		return React.createElement(
@@ -34396,12 +34718,10 @@ var Button = React.createClass({
 			)
 		);
 	}
-
 });
 module.exports = Button;
 
-},{"react":216}],225:[function(require,module,exports){
-
+},{"react":372}],381:[function(require,module,exports){
 var React = require("react");
 var GridStore = require("../store/gridStore.jsx");
 var $ = require('jquery');
@@ -34409,13 +34729,14 @@ var $ = require('jquery');
 var CurrentScore = React.createClass({
   displayName: "CurrentScore",
 
+
   getInitialState: function () {
     return {
       //initializing current score to 0
       currScores: 0
-
     };
   },
+
   componentWillMount: function () {
     var source = "/game/" + this.props.playerName;
     //making ajax call to get info of player
@@ -34425,13 +34746,16 @@ var CurrentScore = React.createClass({
       });
     }.bind(this));
   },
+
   componentWillUnmount: function () {
     //before unmounting aborting the request
     this.serverRequest.abort();
   },
+
   componentDidMount: function () {
     GridStore.addChangeListener(this._onChange);
   },
+
   render: function () {
     return(
       //current score div
@@ -34452,12 +34776,13 @@ var CurrentScore = React.createClass({
       )
     );
   },
+
   _onChange: function () {
     this.setState(getCurrentScore());
     this.props.onChange(getCurrentScore());
   }
-
 });
+
 //gets score from store
 var getCurrentScore = function () {
   return {
@@ -34466,7 +34791,7 @@ var getCurrentScore = function () {
 };
 module.exports = CurrentScore;
 
-},{"../store/gridStore.jsx":234,"jquery":3,"react":216}],226:[function(require,module,exports){
+},{"../store/gridStore.jsx":390,"jquery":3,"react":372}],382:[function(require,module,exports){
 var React = require("react");
 var ScoreBoard = require("./scoreBoard.react.jsx");
 var ReactDOM = require("react-dom");
@@ -34480,9 +34805,10 @@ var DonePage = React.createClass({
 });
 module.exports = DonePage;
 
-},{"./scoreBoard.react.jsx":231,"react":216,"react-dom":221}],227:[function(require,module,exports){
+},{"./scoreBoard.react.jsx":387,"react":372,"react-dom":377}],383:[function(require,module,exports){
 var React = require("react");
 var Grid = require("./grid.react.jsx");
+var Grid1 = require("./grid.react.jsx");
 var ScoreBoard = require("./scoreBoard.react.jsx");
 
 var ReactDOM = require("react-dom");
@@ -34502,7 +34828,7 @@ var GamePage = React.createClass({
 
 module.exports = GamePage;
 
-},{"./grid.react.jsx":228,"./scoreBoard.react.jsx":231,"react":216,"react-dom":221}],228:[function(require,module,exports){
+},{"./grid.react.jsx":384,"./scoreBoard.react.jsx":387,"react":372,"react-dom":377}],384:[function(require,module,exports){
 
 var React = require("react");
 var GridStore = require("../store/gridStore.jsx");
@@ -34517,16 +34843,14 @@ var Grid = React.createClass({
 	getInitialState: function () {
 		return {
 			gridData: GridStore.createGrid()
+
 		};
 	},
-
 	componentDidMount: function () {
 		GridStore.addChangeListener(this._onChange);
 	},
-
 	render: function () {
 		var gridData = this.state.gridData._data;
-
 		return(
 			//generating grid from matrix
 			React.createElement(
@@ -34536,10 +34860,11 @@ var Grid = React.createClass({
 					"table",
 					null,
 					gridData.map(function (val) {
+
 						var temp = val.map(function (value, index) {
+
 							if (value == 0) value = "";
 							var name = 'class_' + value;
-
 							return React.createElement(
 								"td",
 								{ className: name },
@@ -34581,7 +34906,7 @@ function checkKey(e) {
 
 module.exports = Grid;
 
-},{"../actions/gridActionCreators.jsx":222,"../store/gridStore.jsx":234,"react":216}],229:[function(require,module,exports){
+},{"../actions/gridActionCreators.jsx":378,"../store/gridStore.jsx":390,"react":372}],385:[function(require,module,exports){
 var React = require("react");
 var $ = require('jquery');
 //current score board component
@@ -34599,6 +34924,7 @@ var HighScore = React.createClass({
     var source = "/game/" + this.props.playerName;
     //making ajax call to get info of player
     this.serverRequest = $.get(source, function (result) {
+      console.log(result);
       this.setState({
         highScore: result.scores
       });
@@ -34631,227 +34957,228 @@ var HighScore = React.createClass({
 });
 module.exports = HighScore;
 
-},{"jquery":3,"react":216}],230:[function(require,module,exports){
+},{"jquery":3,"react":372}],386:[function(require,module,exports){
 var React = require("react");
-
+var Button = require("./button.react.jsx");
 //login page to collect name from player
 var Login = React.createClass({
-	displayName: "Login",
+  displayName: "Login",
 
-	render: function () {
-		return React.createElement(
-			"div",
-			{ className: "playerInfo" },
-			React.createElement(
-				"h1",
-				null,
-				"2048"
-			),
-			React.createElement(
-				"form",
-				{ action: "/game", method: "POST", name: "playerInfo" },
-				React.createElement("input", { type: "text", name: "playerName", className: "playerName", placeholder: "Enter your name" }),
-				React.createElement("input", { type: "submit", className: "playerButton", value: "Go!" })
-			)
-		);
-	}
+  handleOnClick: function () {},
+  render: function () {
+    return React.createElement(
+      "div",
+      { className: "playerInfo" },
+      React.createElement(
+        "h1",
+        null,
+        "2048"
+      ),
+      React.createElement(
+        "form",
+        { action: "/game", method: "POST", name: "playerInfo" },
+        React.createElement("input", { type: "text", name: "playerName", className: "playerName", placeholder: "Enter your name" }),
+        React.createElement("input", { type: "submit", className: "playerButton", value: "Go!" })
+      )
+    );
+  }
 });
 
 module.exports = Login;
 
-},{"react":216}],231:[function(require,module,exports){
+},{"./button.react.jsx":380,"react":372}],387:[function(require,module,exports){
 var React = require("react");
 var HighScore = require("./highScore.react.jsx");
 var CurrScore = require("./currScore.react.jsx");
 var Button = require("./button.react.jsx");
 //scoreboard page
-
 var ScoreBoard = React.createClass({
-	displayName: "ScoreBoard",
+  displayName: "ScoreBoard",
 
-	getInitialState: function () {
-		return {
-			playername: this.props.playerName
-		};
-	},
-	handleScoreChange: function (score) {
-		//handle score changed in currScore component
-		this.setState({
-			currScore: score.currScores,
-			redir: "/game/" + this.props.playerName + "/score?score=" + score.currScores
-		});
-	},
-	render: function () {
-		return React.createElement(
-			"div",
-			{ className: this.props.classname },
-			React.createElement(
-				"h2",
-				null,
-				this.state.playername
-			),
-			React.createElement(CurrScore, { playerName: this.props.playerName, onChange: this.handleScoreChange }),
-			React.createElement(HighScore, { playerName: this.props.playerName }),
-			React.createElement(Button, { redir: this.props.redir ? this.props.redir : this.state.redir, value: this.props.value })
-		);
-	}
+  getInitialState: function () {
+    return {
+      playername: this.props.playerName
+    };
+  },
+  handleScoreChange: function (score) {
+    //handle score changed in currScore component
+    this.setState({
+      currScore: score.currScores,
+      redir: "/game/" + this.props.playerName + "/score?score=" + score.currScores
+    });
+  },
+  render: function () {
+    return React.createElement(
+      "div",
+      { className: this.props.classname },
+      React.createElement(
+        "h2",
+        null,
+        this.state.playername
+      ),
+      React.createElement(CurrScore, { playerName: this.props.playerName, onChange: this.handleScoreChange }),
+      React.createElement(HighScore, { playerName: this.props.playerName }),
+      React.createElement(Button, { redir: this.props.redir ? this.props.redir : this.state.redir, value: this.props.value })
+    );
+  }
 });
 
 module.exports = ScoreBoard;
 
-},{"./button.react.jsx":224,"./currScore.react.jsx":225,"./highScore.react.jsx":229,"react":216}],232:[function(require,module,exports){
+},{"./button.react.jsx":380,"./currScore.react.jsx":381,"./highScore.react.jsx":385,"react":372}],388:[function(require,module,exports){
 //storing defaults and variables in seperate constants.js file
 
-var gridData = {
-	grid: [],
-	numbers: ['2,4'],
-	currScore: 0,
-	dim: 4
-};
-module.exports = gridData;
+var GameControls = {
+  numbers: ['2,4'],
+  dim: 4,
+  //controls sequence up,right,down,left
+  data: {
+    //use these gridIds while initiating grid to reference
+    grid1: {
+      controls: { "up": 87, "right": 68, "down": 90, "left": 65 }
+    },
 
-},{}],233:[function(require,module,exports){
+    grid2: {
+      controls: { "up": 38, "right": 39, "down": 40, "left": 37 }
+    }
+  }
+};
+module.exports = GameControls;
+
+},{}],389:[function(require,module,exports){
 var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":218}],234:[function(require,module,exports){
+},{"flux":374}],390:[function(require,module,exports){
 var EventEmitter = require('events').EventEmitter;
 var GameDispatcher = require("../dispatcher/gameDispatcher.jsx");
-var gameConstants = require("../constants/gameConstants.jsx");
+var gameConstants = require("../constants/gameConstants");
 var gridclass = require("../utils/grid.js");
 var CHANGE_EVENT = 'change';
 var assign = require('object-assign');
 
-//constructing grid from GridClass class
-var Grid = new gridclass(gameConstants);
+//grid related data
+var GridData;
 //change grid according to action dispatched
 var GridStore = assign({}, EventEmitter.prototype, {
-
-		emitChange: function () {
-				this.emit(CHANGE_EVENT);
-		},
-
-		addChangeListener: function (callback) {
-				this.on(CHANGE_EVENT, callback);
-		},
-
-		removeChangeListener: function (callback) {
-				this.removeListener(CHANGE_EVENT, callback);
-		},
-
-		createGrid: function () {
-				//creating grid for first time with dimensions as parameters
-				Grid.createGrid();
-				return gameConstants.grid;
-		},
-
-		getGrid: function () {
-				return gameConstants.grid;
-		},
-
-		getCurrentScore: function () {
-				return gameConstants.currScore;
-		}
+  emitChange: function () {
+    this.emit(CHANGE_EVENT);
+  },
+  addChangeListener: function (callback) {
+    this.on(CHANGE_EVENT, callback);
+  },
+  removeChangeListener: function (callback) {
+    this.removeListener(CHANGE_EVENT, callback);
+  },
+  createGrid: function () {
+    //creating grid for first time with dimensions as parameters
+    GridData = new gridclass(gameConstants);
+    GridData.createGrid();
+    return GridData.grid;
+  },
+  getGrid: function () {
+    return GridData.grid;
+  },
+  getCurrentScore: function () {
+    return GridData.currScore;
+  }
 });
 
 //dispacting actions and emmiting CHANGE event, whenever state of grid is changed
 GridStore.dispatchToken = GameDispatcher.register(function (action) {
-
-		switch (action.keyCode) {
-				case 37:
-						Grid.left();
-						GridStore.emitChange();
-						break;
-				case 38:
-						Grid.up();
-						GridStore.emitChange();
-						break;
-				case 39:
-						Grid.right();
-						GridStore.emitChange();
-						break;
-				case 40:
-						Grid.down();
-						GridStore.emitChange();
-						break;
-		}
+  switch (action.keyCode) {
+    case 37:
+      GridData.left();
+      GridStore.emitChange();
+      break;
+    case 38:
+      GridData.up();
+      GridStore.emitChange();
+      break;
+    case 39:
+      GridData.right();
+      GridStore.emitChange();
+      break;
+    case 40:
+      GridData.down();
+      GridStore.emitChange();
+      break;
+  }
 });
 
 module.exports = GridStore;
 
-},{"../constants/gameConstants.jsx":232,"../dispatcher/gameDispatcher.jsx":233,"../utils/grid.js":235,"events":1,"object-assign":220}],235:[function(require,module,exports){
+},{"../constants/gameConstants":388,"../dispatcher/gameDispatcher.jsx":389,"../utils/grid.js":391,"events":1,"object-assign":376}],391:[function(require,module,exports){
 var GridClass = function (gameConstants) {
 	var dim = gameConstants.dim;
 	var self = this;
-	var grid = gameConstants.grid;
+	this.grid = [];
+	this.currScore = 0;
 
-	//grid functions
+	//self.grid functions
 	this.createGrid = function () {
 		//dim is dimensions of matrix to create
-		grid = math.zeros(dim, dim);
-		grid._data[0] = self.getRandomInit(grid._data[0]);
-		gameConstants.grid = grid;
+		self.grid = math.zeros(dim, dim);
+		self.grid._data[0] = self.getRandomInit(self.grid._data[0]);
 	};
 	//function when down key is pressed
 	this.down = function () {
 		for (var i = 0; i <= dim - 1; i++) {
 
 			//slicing line to be updated
-			var line = [].concat.apply([], math.subset(grid, math.index(math.range(0, dim), i))._data);
+			var line = [].concat.apply([], math.subset(self.grid, math.index(math.range(0, dim), i))._data);
 			var temp = self.updateLineReverse(line, 0);
 			var stack = [];
 			temp.forEach(function (val, index) {
 				stack.push([val]);
 			});
-			grid.subset(math.index(math.range(0, dim), i), stack);
+			self.grid.subset(math.index(math.range(0, dim), i), stack);
 		}
-		//slicing last row of the grid to insert extra cell
-		var Lastline = grid._data;
+		//slicing last row of the self.grid to insert extra cell
+		var Lastline = self.grid._data;
 		Lastline[0] = self.getRandomInit(Lastline[0]);
 	};
 	//function when up key is pressed
 	this.up = function () {
 		for (var i = 0; i <= dim - 1; i++) {
 			//slicing line to be updated
-			var line = [].concat.apply([], math.subset(grid, math.index(math.range(0, dim), i))._data);
+			var line = [].concat.apply([], math.subset(self.grid, math.index(math.range(0, dim), i))._data);
 			var temp = self.updateLine(line, 1);
 			var stack = [];
 			temp.forEach(function (val, index) {
 				stack.push([val]);
 			});
-			grid.subset(math.index(math.range(0, dim), i), stack);
+			self.grid.subset(math.index(math.range(0, dim), i), stack);
 		}
-		//slicing first row of the grid to insert extra cell
-		var Lastline = grid._data;
+		//slicing first row of the self.grid to insert extra cell
+		var Lastline = self.grid._data;
 		Lastline[Lastline.length - 1] = self.getRandomInit(Lastline[Lastline.length - 1]);
 	};
 	//function when right key is pressed
 	this.right = function () {
 		var stack = [];
-		for (var i = 0; i < grid._data.length; i++) {
-			stack.push(self.updateLine(grid._data[i], 0));
+		for (var i = 0; i < self.grid._data.length; i++) {
+			stack.push(self.updateLine(self.grid._data[i], 0));
 		}
 		//convert updated array back to matrix
-		grid = math.matrix(stack);
-		//slicing first column of the grid to insert extra cell
-		var Lastline = [].concat.apply([], math.subset(grid, math.index(math.range(0, dim), 0))._data);
-		grid.subset(math.index(math.range(0, dim), 0), self.getRandomInit(Lastline));
-		gameConstants.grid = grid;
+		self.grid = math.matrix(stack);
+		//slicing first column of the self.grid to insert extra cell
+		var Lastline = [].concat.apply([], math.subset(self.grid, math.index(math.range(0, dim), 0))._data);
+		self.grid.subset(math.index(math.range(0, dim), 0), self.getRandomInit(Lastline));
 	};
 
 	//function when left key is pressed
 	this.left = function () {
 		var stack = [];
-		for (var i = 0; i < grid._data.length; i++) {
-			stack.push(self.updateLineReverse(grid._data[i], 1));
+		for (var i = 0; i < self.grid._data.length; i++) {
+			stack.push(self.updateLineReverse(self.grid._data[i], 1));
 		}
 		//convert updated array back to matrix
-		grid = math.matrix(stack);
-		//slicing last column of the grid to insert extra cell
-		var Lastline = [].concat.apply([], math.subset(grid, math.index(math.range(0, dim), grid._data.length - 1))._data);
-		grid.subset(math.index(math.range(0, 4), grid._data.length - 1), self.getRandomInit(Lastline));
-		gameConstants.grid = grid;
+		self.grid = math.matrix(stack);
+		//slicing last column of the self.grid to insert extra cell
+		var Lastline = [].concat.apply([], math.subset(self.grid, math.index(math.range(0, dim), self.grid._data.length - 1))._data);
+		self.grid.subset(math.index(math.range(0, 4), self.grid._data.length - 1), self.getRandomInit(Lastline));
 	};
 
 	this.updateLine = function (line, reverse) {
@@ -34864,7 +35191,7 @@ var GridClass = function (gameConstants) {
 				if (val != 0 && line[index] == line[index + 1]) {
 					var end = index + 2 > line.length ? index : index + 2;
 					line[index] += line[index + 1];
-					gameConstants.currScore += line[index];
+					self.currScore += line[index];
 					var start = line.slice(0, index + 1);
 					var sliced = line.slice(end);
 					if (reverse) {
@@ -34894,7 +35221,7 @@ var GridClass = function (gameConstants) {
 			if (line[index] != 0 && line[index] == line[index - 1]) {
 				var end = index;
 				line[index] += line[index - 1];
-				gameConstants.currScore += line[index];
+				self.currScore += line[index];
 				var start = line.slice(0, index - 1);
 				var sliced = line.slice(end);
 				if (reverse) {
@@ -34916,10 +35243,10 @@ var GridClass = function (gameConstants) {
 	//function to check the status of game
 	this.checkGameStatus = function () {
 		var flag = true;
-		grid._data.every(function (val, index) {
-			if (val.indexOf(2048) > -1) {
-				window.location = "/game/" + gameConstants.playerName + "/score?score=" + gameConstants.currScore;
-			}
+		self.grid._data.every(function (val, index) {
+			/*if(val.indexOf(2048)>-1){
+   	window.location="/game/"+gameConstants.playerName+"/score?score="+this.currScore;
+   }*/
 		});
 	};
 	//function to remove zeros from given line as parameter
@@ -34946,7 +35273,7 @@ var GridClass = function (gameConstants) {
 		}
 		return arr;
 	};
-	//function to get updated line by adding new cell after grid
+	//function to get updated line by adding new cell after self.grid
 	this.getRandomInit = function (line) {
 		var num = [2, 4];
 		var temp = self.getRamdomArray(4);
@@ -34961,4 +35288,4 @@ var GridClass = function (gameConstants) {
 };
 module.exports = GridClass;
 
-},{}]},{},[223]);
+},{}]},{},[379]);

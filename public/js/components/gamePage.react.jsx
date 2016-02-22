@@ -1,5 +1,6 @@
 var React=require("react");
 var Grid=require("./grid.react.jsx");
+var Grid1=require("./grid.react.jsx");
 var ScoreBoard=require("./scoreBoard.react.jsx");
 
 var ReactDOM=require("react-dom")
@@ -9,7 +10,7 @@ var GamePage=React.createClass({
 		return (
 			<div>
 				<Grid />
-				<ScoreBoard playerName={this.props.params.playerName} classname="info" value="GiveUp?"/>
+				<ScoreBoard playerName={this.props.params.playerName} classname="info" value="GiveUp?"/>  
 			</div>
 		)
 	

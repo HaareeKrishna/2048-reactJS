@@ -14,11 +14,10 @@ var ReactDOM = require('react-dom');
 
 //declaring routes
 const routes=(
-	<Router>
-			<Route path="/game/:playerName" component={GamePage} />
-			<Route path="/game" component={Login} />
-			<Route path="/game/:playerName/done" component={DonePage} />
-	</Router>
-	);
+  <Router>
+    <Route path="/game/:playerName" component={GamePage} />
+    <Route path="/game" component={Login} />
+    <Route path="/game/:playerName/done" component={DonePage} />
+  </Router>
+  );
 ReactDOM.render(<Router>{routes}</Router>, document.getElementById('gameContainer'));
-   

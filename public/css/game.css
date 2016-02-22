@@ -1,12 +1,13 @@
 #gameContainer{
 	margin:150px 0px 0px 150px;
-	padding:0px 0px 0px 350px;
+	padding:0px 0px 0px 150px;
 	font-size: 20px;
     display: inline-block;
 }
 .gridBody{
 	display: inline-block;
 	float: left;
+	margin:50px;
 }
 table {
   border: 1px solid black;
@@ -102,6 +103,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .playerInfo{
 	padding-top:100px;
 	text-align:center;
+	margin:10px 0px;
 }
 .playerInfo h1{
 	font-size: 100px;
@@ -125,4 +127,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     padding: 8px 21px;
     background-color: rgba(5, 68, 63, 0.28);
     border: 1px solid #1E525A;
+}
+.keypad-button{
+	background-color: rgba(1, 87, 155, 0.33);
+    border: 0px;
+    padding: 10px;
+    width: 40px;
+    margin:10px;
+    text-align: center;
+
+}
+.infotext p{
+	color: #81A7A2;
+    font-family: sans-serif;
+}
+.add-player{
+	display: inline-block;
+    background-color: rgba(103, 174, 191, 0.08);
+    border: 1px solid rgba(191, 229, 241, 0.24);
+    padding:30px;
+    margin:30px;
 }

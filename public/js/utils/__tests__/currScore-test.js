@@ -1,23 +1,28 @@
-jest.dontMock('../../components/currScore.react.jsx');
-config.preprocessCachingDisabled=true;
-
-jest.autoMockOff();
-
+jest.dontMock("../../components/currScore.react.jsx");
 var ReactDOM = require('react-dom'),
     CurrScore = require('../../components/currScore.react.jsx'),
     TestUtils = require('react-addons-test-utils'),
-    React = require('react'),
-    $=require('jquery');
+    React = require('react');
 
 
 describe('current score board',function(){
+
 	beforeEach(function() {
-		this.value=20;
-		this.component = TestUtils.renderIntoDocument(<CurrScore currentScore={this.value} />);
-	});
+		this.playerName="tester";
+    //Default score 
+    this.initScore = "0";
+		this.component = TestUtils.renderIntoDocument(<CurrScore playerName={this.playerName} onChange="" />);
+    this.scoreTextNode=TestUtils.findRenderedDOMComponentWithTag(this.component,"h4");
+    this.scoreNode=TestUtils.findRenderedDOMComponentWithTag(this.component,"h1")
+  });
+
 	it("should exists",function(){
-		var contents=$(this.component).find(".num");
-		expect(contents.innerHtml).toEqual(this.value);
-	})
+    expect(this.scoreTextNode).not.toBe(null);
+    expect(this.scoreNode).not.toBe(null);
+	});
+
+  it("should render score",function(){
+   expect(this.scoreNode.textContent).toEqual(this.initScore);
+  })
 
 })

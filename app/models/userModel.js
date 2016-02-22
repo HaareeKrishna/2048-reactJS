@@ -1,8 +1,12 @@
 var mongo=require("mongodb");
 var mongoClient=mongo.MongoClient;
 function db(cb){
-	mongoClient.connect("mongodb://localhost/gameDb",function(err,db){
-		cb(db);
+	mongoClient.connect("mongodb://localhost/db",function(err,db){
+		if(db.collection("players"))
+			cb(db);
+		else{
+			
+		}
 	});
 }
 var app={

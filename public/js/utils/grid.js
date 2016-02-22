@@ -1,30 +1,31 @@
+var math = require("mathjs");
 var GridClass=function(gameConstants){
 	var dim=gameConstants.dim;
 	var self=this;	
-	var grid=gameConstants.grid;
+	this.grid=[];
+	this.currScore=0;
 
-	//grid functions
+	//self.grid functions
 	this.createGrid=function(){
 			//dim is dimensions of matrix to create
-			grid=math.zeros(dim,dim);
-			grid._data[0]=self.getRandomInit(grid._data[0]);
-			gameConstants.grid=grid;
+			self.grid=math.zeros(dim,dim);
+			self.grid._data[0]=self.getRandomInit(self.grid._data[0]);
 		};
 	//function when down key is pressed
 	this.down=function(){
 			for(var i=0;i<=dim-1;i++){
 
 				//slicing line to be updated
-				var line=[].concat.apply([],math.subset(grid,math.index(math.range(0,dim),i))._data);
+				var line=[].concat.apply([],math.subset(self.grid,math.index(math.range(0,dim),i))._data);
 				var temp=self.updateLineReverse(line,0);
 				var stack=[];
 				temp.forEach(function(val,index){
 					stack.push([val]);
 				});
-				grid.subset(math.index(math.range(0,dim),i),stack);
+				self.grid.subset(math.index(math.range(0,dim),i),stack);
 			}
-			//slicing last row of the grid to insert extra cell
-			var Lastline=grid._data;
+			//slicing last row of the self.grid to insert extra cell
+			var Lastline=self.grid._data;
 			Lastline[0]=self.getRandomInit(Lastline[0]);
 			
 		};
@@ -32,47 +33,46 @@ var GridClass=function(gameConstants){
 	this.up=function(){
 			for(var i=0;i<=dim-1;i++){
 				//slicing line to be updated
-				var line=[].concat.apply([],math.subset(grid,math.index(math.range(0,dim),i))._data);
+				var line=[].concat.apply([],math.subset(self.grid,math.index(math.range(0,dim),i))._data);
 				var temp=self.updateLine(line,1);
 				var stack=[];
 				temp.forEach(function(val,index){
 					stack.push([val]);
 				});
-				grid.subset(math.index(math.range(0,dim),i),stack);
+				self.grid.subset(math.index(math.range(0,dim),i),stack);
 			}
-			//slicing first row of the grid to insert extra cell
-			var Lastline=grid._data;
+			//slicing first row of the self.grid to insert extra cell
+			var Lastline=self.grid._data;
 			Lastline[Lastline.length-1]=self.getRandomInit(Lastline[Lastline.length-1]);
 		
-			
 	};
 	//function when right key is pressed
 	this.right=function(){
 			var stack=[];
-			for(var i=0;i<grid._data.length;i++){
-				stack.push(self.updateLine(grid._data[i],0));
+			for(var i=0;i<self.grid._data.length;i++){
+				stack.push(self.updateLine(self.grid._data[i],0));
 			}
 			//convert updated array back to matrix
-			grid=math.matrix(stack);
-			//slicing first column of the grid to insert extra cell
-			var Lastline=[].concat.apply([],math.subset(grid,math.index(math.range(0,dim),0))._data);
-			grid.subset(math.index(math.range(0,dim),0),self.getRandomInit(Lastline));
-			gameConstants.grid=grid;
+			self.grid=math.matrix(stack);
+			//slicing first column of the self.grid to insert extra cell
+			var Lastline=[].concat.apply([],math.subset(self.grid,math.index(math.range(0,dim),0))._data);
+			self.grid.subset(math.index(math.range(0,dim),0),self.getRandomInit(Lastline));
+
 			
 		};
 
 	//function when left key is pressed
 	this.left=function(){
 			var stack=[];
-			for(var i=0;i<grid._data.length;i++){
-				stack.push(self.updateLineReverse(grid._data[i],1));
+			for(var i=0;i<self.grid._data.length;i++){
+				stack.push(self.updateLineReverse(self.grid._data[i],1));
 			}
 			//convert updated array back to matrix
-			grid=math.matrix(stack);
-			//slicing last column of the grid to insert extra cell
-			var Lastline=[].concat.apply([],math.subset(grid,math.index(math.range(0,dim),grid._data.length-1))._data);
-			grid.subset(math.index(math.range(0,4),grid._data.length-1),self.getRandomInit(Lastline));
-			gameConstants.grid=grid;
+			self.grid=math.matrix(stack);
+			//slicing last column of the self.grid to insert extra cell
+			var Lastline=[].concat.apply([],math.subset(self.grid,math.index(math.range(0,dim),self.grid._data.length-1))._data);
+			self.grid.subset(math.index(math.range(0,4),self.grid._data.length-1),self.getRandomInit(Lastline));
+			
 			
 		};
 		
@@ -86,7 +86,7 @@ var GridClass=function(gameConstants){
 					if(val!=0 && line[index]==line[index+1]){
 						var end=index+2>line.length?index:index+2;
 						line[index]+=line[index+1];
-						gameConstants.currScore+=line[index];
+						self.currScore+=line[index];
 						var start=line.slice(0,index+1);
 						var sliced=line.slice(end);
 						if(reverse){
@@ -122,7 +122,7 @@ var GridClass=function(gameConstants){
 					if(line[index]!=0 && line[index]==line[index-1]){
 						var end=index;
 						line[index]+=line[index-1];
-						gameConstants.currScore+=line[index];
+						self.currScore+=line[index];
 						var start=line.slice(0,index-1);
 						var sliced=line.slice(end);
 						if(reverse){
@@ -148,10 +148,10 @@ var GridClass=function(gameConstants){
 		//function to check the status of game
 		this.checkGameStatus=function(){
 			var flag=true;
-			grid._data.every(function(val,index){
-				if(val.indexOf(2048)>-1){
-					window.location="/game/"+gameConstants.playerName+"/score?score="+gameConstants.currScore;
-				}
+			self.grid._data.every(function(val,index){
+				/*if(val.indexOf(2048)>-1){
+					window.location="/game/"+gameConstants.playerName+"/score?score="+this.currScore;
+				}*/
 			})
 		};
 	//function to remove zeros from given line as parameter
@@ -183,7 +183,7 @@ var GridClass=function(gameConstants){
 			}
 			return arr;
 		};
-	//function to get updated line by adding new cell after grid
+	//function to get updated line by adding new cell after self.grid
 	this.getRandomInit=function(line){
 			var num=[2,4];
 			var temp=self.getRamdomArray(4);
