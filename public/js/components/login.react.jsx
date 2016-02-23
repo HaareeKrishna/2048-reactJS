@@ -9,7 +9,7 @@ var Login=React.createClass({
   			<h1>2048</h1>
   			<form action="/game" method="POST" name="playerInfo">
           <input type="text" name="playerName" className="playerName" placeholder="Enter your name"/>
-          <input type="submit" className="playerButton" value="Go!" />
+          <input type="submit" name="playerButton" className="playerButton" value="Go!" />
         </form>
       </div>
 		)

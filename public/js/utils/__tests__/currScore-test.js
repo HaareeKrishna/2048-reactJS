@@ -17,8 +17,8 @@ describe('current score board',function(){
   });
 
 	it("should exists",function(){
-    expect(this.scoreTextNode.length).not.toEqual(0);
-    expect(this.scoreNode).not.toBe(null);
+    expect(this.scoreTextNode.innerHTML.length).not.toEqual(0);
+    expect(this.scoreNode.innerHTML.length).not.ttoEqual(0);
 	});
 
   it("should render score",function(){

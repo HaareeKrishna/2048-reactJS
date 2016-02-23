@@ -12,7 +12,7 @@ describe('current score board',function(){
   });
 
 	it("should exists ",function(){
-		expect(this.formNode.innerHTML).not.toEqual(0);
+		expect(this.formNode.innerHTML.length).not.toEqual(0);
     TestUtils.Simulate.click(TestUtils.findRenderedDOMComponentWithClass(this.component,"playerButton"));
 	})
 });
