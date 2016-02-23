@@ -1,8 +1,8 @@
-var GameDispatcher=require("../dispatcher/gameDispatcher.jsx");
-var GameConstants=require("../constants/gameConstants")
+var GameDispatcher = require("../dispatcher/gameDispatcher.jsx");
+var GameConstants = require("../constants/gameConstants")
 var direction;
 
-var app={
+var app = {
 	modifyGrid:function(keyCode){
 		GameDispatcher.dispatch({keyCode:keyCode});
   }

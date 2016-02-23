@@ -24,20 +24,18 @@ var Grid=React.createClass({
 			//generating grid from matrix
 			<div className='gridBody'><table>
 				{
-					gridData.map(function(val){
-						var temp = val.map(function(value,index){
-							if(value == 0) value = "";
-							var name = 'class_'+value;
-							return (
-								<td className = {name}><span>{value}</span></td>
-							)
+					gridData.map(function(row){
+
+						var cells = row.map(function(cell,index){
+
+							if(cell == 0) value = "";
+							var name = 'class_'+cell;
+							return <td className = {name}><span>{cell}</span></td>;
 						})
-					return (
-						<tr>{temp}</tr>
-					)
-				})
-			}
-		</table></div>
+						return <tr>{cells}</tr>;
+					})
+				}
+			</table></div>
 		);
 	},
 
@@ -45,19 +43,14 @@ var Grid=React.createClass({
 		this.setState(getGrid());
   }
 });
+
 function getGrid(){
-
 	return {
-
 		gridData:GridStore.getGrid()
-
 	};
 }
 
 function checkKey(e) {
-
 	GridActionCreator.modifyGrid(event.keyCode);
-
 }
-
 module.exports=Grid;

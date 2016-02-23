@@ -1,6 +1,5 @@
 var React=require("react");
 var Grid=require("./grid.react.jsx");
-var Grid1=require("./grid.react.jsx");
 var ScoreBoard=require("./scoreBoard.react.jsx");
 
 var ReactDOM=require("react-dom")

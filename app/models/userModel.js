@@ -1,20 +1,22 @@
-var mongo=require("mongodb");
-var mongoClient=mongo.MongoClient;
+var mongo = require("mongodb");
+var mongoClient = mongo.MongoClient;
+
 function db(cb){
-	mongoClient.connect("mongodb://localhost/db",function(err,db){
+	mongoClient.connect("mongodb://localhost/gameDb",function(err,db){
 		if(db.collection("players"))
 			cb(db);
-		else{
-			
+		else {
+				
 		}
 	});
 }
-var app={
+
+var app = {
 
 	save:function(userName,score){
 		db(function(db){
 			app.getUser(userName,function(result){
-				if(result.length==0)
+				if(result.length == 0)
 					db.collection("players").insert({userName:userName,scores:score,currScore:0},{w:1},function(err,data){
 						
 					})
@@ -40,6 +42,6 @@ var app={
 			
 		});
 	}
-	}
+}
 
 module.exports=app;
