@@ -8,11 +8,11 @@ var ReactDOM = require('react-dom'),
 describe('current score board',function(){
 	beforeEach(function() {
     	this.component = TestUtils.renderIntoDocument(<Login />);
-      this.formNode = TestUtils.findRenderedDOMComponentWithTag(this.component,"form")
+      this.formNode = TestUtils.findRenderedDOMComponentWithTag(this.component,"form");
   });
 
 	it("should exists ",function(){
-		expect(this.formNode).not.toBe("null");
+		expect(this.formNode.innerHTML).not.toEqual(0);
     TestUtils.Simulate.click(TestUtils.findRenderedDOMComponentWithClass(this.component,"playerButton"));
 	})
 });

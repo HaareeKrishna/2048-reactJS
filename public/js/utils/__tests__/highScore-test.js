@@ -12,8 +12,8 @@ describe('highscore board',function(){
   });
 
   it("should exists",function(){
-    expect(this.scoreTextNode).not.toBe(null);
-    expect(this.scoreNode).not.toBe(null);
+    expect(this.scoreTextNode.innerHTML.length).not.toEqual(0);
+    expect(this.scoreNode.innerHTML.length).not.toEqual(0);
   });
 
   it("should render score",function(){

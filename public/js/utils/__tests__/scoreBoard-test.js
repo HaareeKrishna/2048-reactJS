@@ -17,9 +17,10 @@ describe("A scoreboard test",function(){
     this.HighScoreNode = TestUtils.findRenderedComponentWithType(this.component, Highscore);
     this.buttonNode = TestUtils.findRenderedComponentWithType(this.component, Highscore);
   });
-  
+
   it("should render currScore component properly",function(){
     expect(this.currScoreNode).not.toBe(null);
+    
   });
 
   it("should render Highscore component properly",function(){

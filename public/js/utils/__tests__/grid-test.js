@@ -18,8 +18,9 @@ describe('The grid ',function(){
   });
 
   it("in which table should exists",function(){
-    expect(this.tableNode).not.toBe(null);
+    expect(this.tableNode.innerHTML.length).not.toEqual(0);
   });
+  
   //test for grid table
   describe("in which dim*dim cells should render",function(){
 
@@ -30,7 +31,7 @@ describe('The grid ',function(){
     it("should have dim*dim length",function(){
       expect(this.cells.length-1).toEqual(15);
     })
-    
+
     it("should have dim*dim -1 cells of values 0",function(){
       //checking only one cell have data initially
      var temp = this.cells.filter(val => val!=0);
