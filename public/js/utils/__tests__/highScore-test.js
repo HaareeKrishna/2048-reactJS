@@ -3,10 +3,7 @@ var ReactDOM = require('react-dom'),
     Highscore = require('../../components/highScore.react.jsx'),
     TestUtils = require('react-addons-test-utils'),
     React = require('react');
-
-
-describe('highscore board',function(){
-
+describe('highscore board',function(){  
   beforeEach(function() {
     this.playerName="tester";
     this.component = TestUtils.renderIntoDocument(<Highscore playerName={this.playerName} />);
@@ -22,5 +19,4 @@ describe('highscore board',function(){
   it("should render score",function(){
    expect(typeof parseInt(this.scoreNode.textContent)).toEqual("number");
   })
-
 })

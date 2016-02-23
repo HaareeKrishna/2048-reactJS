@@ -1,5 +1,4 @@
 jest.dontMock("../../components/scoreBoard.react.jsx");
-
 var ReactDOM = require('react-dom'),
     ScoreBoard = require('../../components/scoreBoard.react.jsx'),
     TestUtils = require('react-addons-test-utils'),
@@ -18,6 +17,7 @@ describe("A scoreboard test",function(){
     this.HighScoreNode = TestUtils.findRenderedComponentWithType(this.component, Highscore);
     this.buttonNode = TestUtils.findRenderedComponentWithType(this.component, Highscore);
   });
+  
   it("should render currScore component properly",function(){
     expect(this.currScoreNode).not.toBe(null);
   });

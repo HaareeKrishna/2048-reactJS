@@ -3,7 +3,7 @@ var HighScore = require("./highScore.react.jsx")
 var CurrScore = require("./currScore.react.jsx")
 var Button = require("./button.react.jsx")
 //scoreboard page
-var ScoreBoard  React.createClass({
+var ScoreBoard = React.createClass({
 	getInitialState: function() {
     return {
       playername: this.props.playerName

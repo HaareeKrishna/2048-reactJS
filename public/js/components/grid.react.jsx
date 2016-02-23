@@ -28,7 +28,7 @@ var Grid=React.createClass({
 
 						var cells = row.map(function(cell,index){
 
-							if(cell == 0) value = "";
+							if(cell == 0) cell = "";
 							var name = 'class_'+cell;
 							return <td className = {name}><span>{cell}</span></td>;
 						})
@@ -50,7 +50,7 @@ function getGrid(){
 	};
 }
 
-function checkKey(e) {
+function checkKey(event) {
 	GridActionCreator.modifyGrid(event.keyCode);
 }
 module.exports=Grid;

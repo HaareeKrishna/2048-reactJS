@@ -39,22 +39,22 @@ var GridStore = assign({}, EventEmitter.prototype, {
 //dispacting actions and emmiting CHANGE event, whenever state of grid is changed
 GridStore.dispatchToken=GameDispatcher.register(function(action) {
 	switch(action.keyCode){
-		case 37: x`
-				GridData.left();
-				GridStore.emitChange();
-				break;
+		case 37: 
+			GridData.left();
+			GridStore.emitChange();
+			break;
 		case 38:
-				GridData.up();
-				GridStore.emitChange();
-				break;
+			GridData.up();
+			GridStore.emitChange();
+			break;
 		case 39:
-				GridData.right();
-				GridStore.emitChange();
-				break;
+			GridData.right();
+			GridStore.emitChange();
+			break;
 		case 40:
-				GridData.down();
-				GridStore.emitChange();
-				break;
+			GridData.down();
+			GridStore.emitChange();
+			break;
 	}
 });
 module.exports = GridStore;

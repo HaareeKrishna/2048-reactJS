@@ -12,8 +12,8 @@ describe('current score board',function(){
     //Default score 
     this.initScore = "0";
 		this.component = TestUtils.renderIntoDocument(<CurrScore playerName={this.playerName} onChange="" />);
-    this.scoreTextNode=TestUtils.findRenderedDOMComponentWithTag(this.component,"h4");
-    this.scoreNode=TestUtils.findRenderedDOMComponentWithTag(this.component,"h1")
+    this.scoreTextNode = TestUtils.findRenderedDOMComponentWithTag(this.component,"h4");
+    this.scoreNode = TestUtils.findRenderedDOMComponentWithTag(this.component,"h1")
   });
 
 	it("should exists",function(){
