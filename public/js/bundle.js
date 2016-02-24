@@ -83432,6 +83432,7 @@ var React = require("react");
 var GridStore = require("../store/gridStore");
 var GridActionCreator = require('../actions/gridActionCreators');
 //binding function to keyDown event
+document.onkeydown = checkKey;
 var Grid = React.createClass({
 	displayName: "Grid",
 
@@ -83487,9 +83488,7 @@ var Grid = React.createClass({
 		this.setState(this._getGrid());
 	},
 
-	_getGrid: getGrid,
-	_checkKey: checkKey
-
+	_getGrid: getGrid
 });
 
 function getGrid() {
@@ -83501,8 +83500,6 @@ function getGrid() {
 function checkKey(event) {
 	GridActionCreator.modifyGrid(event.keyCode);
 }
-
-document.onkeydown = checkKey;
 module.exports = Grid;
 
 },{"../actions/gridActionCreators":715,"../store/gridStore":728,"react":710}],723:[function(require,module,exports){
@@ -83655,6 +83652,8 @@ var GameControls = {
 module.exports = GameControls;
 
 },{}],727:[function(require,module,exports){
+'use strict';
+
 var Dispatcher = require('flux').Dispatcher;
 module.exports = new Dispatcher();
 
@@ -83685,7 +83684,7 @@ var GridStore = assign({}, EventEmitter.prototype, {
 
   createGrid: function createGrid() {
     //creating grid for first time with dimensions as parameters
-    GridData = new gridclass(gameConstants);
+    this.GridData = GridData = new gridclass(gameConstants);
     GridData.createGrid();
     return GridData.grid;
   },
@@ -83728,7 +83727,7 @@ module.exports = GridStore;
 var EventEmitter = require('events').EventEmitter;
 var GameDispatcher = require("../dispatcher/gameDispatcher");
 var CHANGE_EVENT = 'change';
-var assign = require('object-assign');4;
+var assign = require('object-assign');
 //require jquery fir ajax calls
 var $ = require('jquery');
 
@@ -83765,7 +83764,8 @@ var ScoreBoardStore = assign({}, EventEmitter.prototype, {
     return this.scores.scores;
   }
 });
-ScoreBoardStore.dispatchToken = GameDispatcher.register(function (action) {
+GameDispatcher.register(function (action) {
+
   switch (action.type) {
     case "loadScores":
       ScoreBoardStore.loadScores(action.playerName);

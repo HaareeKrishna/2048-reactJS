@@ -41,9 +41,7 @@ var Grid=React.createClass({
 		this.setState(this._getGrid());
   },
 
-  _getGrid : getGrid,
-  _checkKey : checkKey
-
+  _getGrid : getGrid
  });
 
 function getGrid(){

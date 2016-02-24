@@ -5,7 +5,9 @@ var ReactDOM = require('react-dom'),
     React = require('react'),
     Grid = require('../../components/grid.react.jsx'),
     TestUtils = require('react-addons-test-utils'),
-    GridStore = require("../../store/gridStore");
+    GridStore = require("../../store/gridStore"),
+    GridActionCreators = require('../../actions/gridActionCreators');
+
 //test for grid component 
 describe('The grid ',function(){
   beforeEach(function() {
@@ -61,9 +63,11 @@ describe('The grid ',function(){
 
   });
 
-  /*it("should trigger checkKey function after keyDown function",function(){
+  it("should trigger checkKey function after keyDown function",function(){
     //simulate key down event
-    TestUtils.Simulate.keyDown(document, {keyCode : 37});
-    expect(this.component._checkKey).toBeCalled()
-  })*/
+    var event = new KeyboardEvent('keydown', {'keyCode': 37});
+    document.dispatchEvent(event);
+    expect(GridActionCreators.modifyGrid).toBeCalled();
+    expect(GridActionCreators.modifyGrid.mock.calls[0][0]).toEqual(37)
+  })
 })
