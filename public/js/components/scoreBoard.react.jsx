@@ -6,7 +6,6 @@ var Button = require("./button.react.jsx")
 var ScoreBoard = React.createClass({
 	getInitialState: function() {
     return {
-      playername: this.props.playerName
     };  
   },
   handleScoreChange:function(score){	
@@ -19,7 +18,7 @@ var ScoreBoard = React.createClass({
   render:function(){
 	  return(
 			<div className={this.props.classname}>
-		  	<h2>{this.state.playername}</h2>
+		  	<h2>{this.props.playername}</h2>
 				<CurrScore playerName={this.props.playerName} onChange={this.handleScoreChange} />
 	  		<HighScore playerName={this.props.playerName} />
 	 			<Button redir={this.props.redir?this.props.redir:this.state.redir} value={this.props.value} />

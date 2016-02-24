@@ -14,7 +14,7 @@ var ReactDOM = require('react-dom');
 const routes=(
   <Router>
     <Route path="/game/:playerName" component={GamePage} />
-    <Route path="/game" component={Login} />
+    <Route path="/" component={Login} />
     <Route path="/game/:playerName/done" component={DonePage} />
   </Router>
   );

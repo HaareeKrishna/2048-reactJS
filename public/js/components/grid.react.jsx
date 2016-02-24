@@ -1,18 +1,16 @@
 
 var React = require("react");
-var GridStore = require("../store/gridStore.jsx");
-var GridActionCreator = require('../actions/gridActionCreators.jsx');
+var GridStore = require("../store/gridStore");
+var GridActionCreator = require('../actions/gridActionCreators');
 //binding function to keyDown event
 document.onkeydown = checkKey;
-
-
 var Grid=React.createClass({
 
 	getInitialState: function() {	
 		return {
-    		gridData: GridStore.createGrid()
-			};
-   },
+    	gridData: GridStore.createGrid()
+		};
+  },
 
 	componentDidMount:function(){
   		GridStore.addChangeListener(this._onChange);
@@ -40,9 +38,13 @@ var Grid=React.createClass({
 	},
 
 	_onChange: function() {
-		this.setState(getGrid());
-  }
-});
+		this.setState(this._getGrid());
+  },
+
+  _getGrid : getGrid,
+  _checkKey : checkKey
+
+ });
 
 function getGrid(){
 	return {

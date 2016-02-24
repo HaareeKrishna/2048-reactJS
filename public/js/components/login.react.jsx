@@ -1,5 +1,4 @@
 var React = require("react");
-var Button = require("./button.react.jsx");
 //login page to collect name from player
 var Login=React.createClass({
   

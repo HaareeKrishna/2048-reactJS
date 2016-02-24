@@ -1,5 +1,12 @@
 var React = require("react");
-var $ = require ('jquery')
+var ScoreBoardStore = require("../store/scoreBoardStore");
+var ScoreBoardActionCreator = require('../actions/scoreBoardActionCreator');
+
+var getHighScore = function(store){
+  return {
+    highScore:store.getHighScore()
+  }
+}
 //current score board component
 var HighScore = React.createClass({
   getInitialState: function() {
@@ -8,20 +15,14 @@ var HighScore = React.createClass({
     		highScore:0
     };
   },
-
   componentWillMount: function() {
-    var source = "/game/"+this.props.playerName; 
-    //making ajax call to get info of player
-    this.serverRequest = $.get(source, function (result) {
-      this.setState({
-        highScore:result.scores
-      });
-    }.bind(this));
+    ScoreBoardStore.addChangeListener(this._onMount);
+    ScoreBoardActionCreator.loadScores(this.props.playerName);
   },
 
   componentWillUnmount: function() {
-  //before unmounting aborting the request
-    this.serverRequest.abort();
+    //before unmounting aborting the request
+    ScoreBoardActionCreator.abortRequest();
   },
 
   render:function(){
@@ -32,6 +33,13 @@ var HighScore = React.createClass({
 				<h1 className = "num">{this.state.highScore}</h1>
 			</span>
 		)
-  }
+  },
+
+  _onMount:function(){
+    this.setState(this._getHighScore(ScoreBoardStore))
+  },
+
+  _getHighScore : getHighScore
+
 });
 module.exports = HighScore;

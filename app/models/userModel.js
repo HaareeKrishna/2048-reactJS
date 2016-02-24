@@ -22,7 +22,6 @@ var app = {
 					})
 				else
 					db.collection("players").update({userName:userName},{$set:{"currScore":0}});
-
 			})
 		});
 	},
@@ -31,7 +30,6 @@ var app = {
 
 			db.collection("players").find({userName:userName}).toArray(function(err,data){
 				cb(data);
-
 			})
 		})
 	},
